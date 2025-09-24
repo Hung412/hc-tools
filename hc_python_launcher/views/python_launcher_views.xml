@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form view for Python Launcher Wizard -->
+    <record id="view_python_launcher_wizard_form" model="ir.ui.view">
+        <field name="name">python.launcher.wizard.form</field>
+        <field name="model">python.launcher</field>
+        <field name="arch" type="xml">
+            <form string="Python Script Launcher">
+                <header>
+                    <button name="action_run_script" 
+                            string="Run Script" 
+                            type="object" 
+                            class="btn-primary"
+                            icon="fa-play"/>
+                    <button name="action_quick_launch_btmc" 
+                            string="Quick Launch BTMC" 
+                            type="object" 
+                            class="btn-success"
+                            icon="fa-rocket"/>
+                    <button string="Cancel" 
+                            class="btn-secondary" 
+                            special="cancel"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="script_name" placeholder="Select script to run..."/>
+                        </h1>
+                    </div>
+                    
+                    <group>
+                        <group>
+                            <field name="run_mode" widget="radio"/>
+                        </group>
+                        <group>
+                            <field name="custom_script_path" 
+                                   invisible="script_name != 'custom'"
+                                   required="script_name == 'custom'"
+                                   placeholder="C:\path\to\your\script.py"/>
+                        </group>
+                    </group>
+                    
+                    <notebook>
+                        <page string="Instructions">
+                            <div class="alert alert-info" role="alert">
+                                <h4><i class="fa fa-info-circle"/> How to use:</h4>
+                                <ul>
+                                    <li><strong>BTMC Launcher:</strong> Run existing btmc_launcher.py file</li>
+                                    <li><strong>Custom Script:</strong> Run custom Python file (enter full path)</li>
+                                    <li><strong>Background Mode:</strong> Run script without waiting for result (fast)</li>
+                                    <li><strong>Wait Mode:</strong> Run script and display result (slower)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="alert alert-warning" role="alert">
+                                <h4><i class="fa fa-exclamation-triangle"/> Notes:</h4>
+                                <ul>
+                                    <li>Ensure Python is installed and available in PATH</li>
+                                    <li>Script file must exist and have execution permission</li>
+                                    <li>With Wait mode: script will timeout after 60 seconds</li>
+                                </ul>
+                            </div>
+                        </page>
+                        
+                        <page string="Common Scripts">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5>Default Scripts:</h5>
+                                    <ul>
+                                        <li><code>C:\Users\ADMIN\git\hc_tools\btmc_launcher.py</code></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>Examples:</h5>
+                                    <ul>
+                                        <li><code>C:\scripts\automation.py</code></li>
+                                        <li><code>D:\tools\data_processor.py</code></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action for wizard -->
+    <record id="action_python_launcher_wizard" model="ir.actions.act_window">
+        <field name="name">Python Script Launcher</field>
+        <field name="res_model">python.launcher</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="view_python_launcher_wizard_form"/>
+    </record>
+
+    <!-- Main menu -->
+    <menuitem id="menu_python_launcher_root"
+              name="Python Launcher"
+              sequence="100"/>
+
+    <!-- Sub menu items -->
+    <menuitem id="menu_python_launcher_wizard"
+              name="Launch Script"
+              parent="menu_python_launcher_root"
+              action="action_python_launcher_wizard"
+              sequence="10"/>
+
+</odoo>
