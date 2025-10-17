@@ -6,3 +6,5 @@ trigger test 4
 trigger test 5
 trigger test 6
 trigger test 7
+trigger test 8
+test 1
