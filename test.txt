@@ -42,4 +42,4 @@ test 12345
 23102025_v6
 23102025_v7
 23102025_v8
-23102025_v9
+23102025_v9test build with docker config B
