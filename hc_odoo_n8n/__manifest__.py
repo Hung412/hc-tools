@@ -10,6 +10,9 @@
     """,
     'author': 'TuanHung',
     'depends': ['gamification'],
+    'data': [
+        'data/ir_config_parameter.xml',
+    ],
     'installable': True,
     'license': 'OPL-1'
 }
