@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+        <record id="ir_config_parameter_n8n_webhook_url" model="ir.config_parameter">
+            <field name="key">hc_odoo_n8n.webhook_url</field>
+            <field name="value">Not configured</field>
+        </record>
+    </data>
+
+</odoo>
