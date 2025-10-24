@@ -11,6 +11,6 @@
     'author': 'TuanHung',
     'depends': ['gamification'],
     'installable': True,
-    'auto_install': False,
     'application': False,
+    'license': 'OPL-1'
 }

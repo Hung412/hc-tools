@@ -19,7 +19,6 @@ Tính năng:
         'views/python_launcher_views.xml',
     ],
     'installable': True,
-    'auto_install': False,
     'application': False,
     'license': 'OPL-1',
 }
