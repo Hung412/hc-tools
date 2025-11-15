@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- Main Chatbot AI OpenRouter Menu -->
+    <menuitem id="menu_openrouter_root"
+              name="Chatbot AI OpenRouter"
+              sequence="100"/>
+              <!-- web_icon="openrouter_discuss_chatbot,static/description/icon.png"/> -->
+    
+    <!-- Configuration Menu -->
+    <menuitem id="menu_openrouter_configuration"
+              name="Configuration"
+              parent="menu_openrouter_root"
+              sequence="100"/>
+    
+    <menuitem id="menu_openrouter_config"
+              name="OpenRouter Settings"
+              parent="menu_openrouter_configuration"
+              action="action_openrouter_config"
+              sequence="10"/>
+
+</odoo>
