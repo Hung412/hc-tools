@@ -1,0 +1,1 @@
+The repo includes modules based on Odoo
