@@ -32,7 +32,6 @@ field is an ``Integer``:
     <field name="tax_rate"        widget="integer_percentage" placeholder="0"/>
     """,
     "author": "Hc",
-    "website": "https://github.com/hc-tools",
     "version": "18.0.1.0.0",
     "category": "Technical",
     "assets": {
