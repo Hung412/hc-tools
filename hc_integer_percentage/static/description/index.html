@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <style>
+        body { font-family: 'Roboto', sans-serif; color: #333; }
+        .oe_container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+        .oe_dark { background-color: #f9f9f9; }
+        h2.oe_slogan { font-size: 28px; font-weight: 700; color: #017e84; margin-bottom: 8px; }
+        h3.oe_slogan { font-size: 20px; font-weight: 600; color: #555; margin-top: 0; }
+        .feature-grid { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 24px; }
+        .feature-card {
+            flex: 1 1 260px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px 24px;
+            background: #fff;
+        }
+        .feature-card h4 { margin: 0 0 8px; font-size: 16px; color: #017e84; }
+        .feature-card p { margin: 0; font-size: 14px; line-height: 1.6; color: #555; }
+        .badge {
+            display: inline-block;
+            background: #017e84;
+            color: #fff;
+            border-radius: 4px;
+            padding: 2px 10px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 6px;
+        }
+        .code-block {
+            background: #272822;
+            color: #f8f8f2;
+            border-radius: 6px;
+            padding: 16px 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.7;
+            overflow-x: auto;
+        }
+        .code-block .attr  { color: #a6e22e; }
+        .code-block .val   { color: #e6db74; }
+        .code-block .tag   { color: #66d9ef; }
+        .compare-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 14px; }
+        .compare-table th { background: #017e84; color: #fff; padding: 10px 14px; text-align: left; }
+        .compare-table td { padding: 10px 14px; border-bottom: 1px solid #e0e0e0; }
+        .compare-table tr:nth-child(even) td { background: #f5f5f5; }
+        .tick { color: #00a854; font-weight: 700; }
+        .cross { color: #d9534f; font-weight: 700; }
+        .section-title { border-left: 4px solid #017e84; padding-left: 12px; margin: 32px 0 16px; }
+    </style>
+</head>
+<body>
+
+<!-- ── Hero ── -->
+<section class="oe_container" style="text-align:center; padding: 48px 16px;">
+    <h2 class="oe_slogan">Integer Percentage Widget</h2>
+    <h3 class="oe_slogan">Show any Integer field as <strong>50%</strong> — without the multiplication magic of the built-in widget</h3>
+    <p style="margin-top:16px;">
+        <span class="badge">Odoo 18</span>
+        <span class="badge">OWL</span>
+        <span class="badge">Zero Python</span>
+        <span class="badge">Any Model</span>
+    </p>
+</section>
+
+<!-- ── Problem ── -->
+<section class="oe_container oe_dark" style="padding: 40px 16px;">
+    <h3 class="section-title">Why not just use the built-in <code>percentage</code> widget?</h3>
+    <p>
+        Odoo's native <code>widget="percentage"</code> was designed for <strong>Float fields</strong>.
+        It treats the stored value as a fraction — so <code>0.5</code> is displayed as <code>50%</code>.
+        When you apply it to an <strong>Integer field</strong>, the result is wrong:
+    </p>
+    <table class="compare-table">
+        <thead>
+            <tr>
+                <th>Widget</th>
+                <th>Field type</th>
+                <th>Stored value</th>
+                <th>Displayed as</th>
+                <th>Correct?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>percentage</code> (built-in)</td>
+                <td>Integer</td>
+                <td>50</td>
+                <td>5,000%</td>
+                <td class="cross">✗</td>
+            </tr>
+            <tr>
+                <td><code>integer_percentage</code> (this module)</td>
+                <td>Integer</td>
+                <td>50</td>
+                <td>50%</td>
+                <td class="tick">✓</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- ── Features ── -->
+<section class="oe_container" style="padding: 40px 16px;">
+    <h3 class="section-title">Features</h3>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h4>✅ Correct display</h4>
+            <p>Stored value <code>50</code> is shown as <code>50%</code>. No hidden ×100 or ÷100 conversion.</p>
+        </div>
+        <div class="feature-card">
+            <h4>🔢 Thousand-separator aware</h4>
+            <p>Large values like <code>1000</code> are formatted per locale — e.g. <code>1,000%</code>.</p>
+        </div>
+        <div class="feature-card">
+            <h4>⌨️ Smart input parsing</h4>
+            <p>Users can type <code>50</code> or <code>50%</code> — both save the integer <code>50</code> to the database.</p>
+        </div>
+        <div class="feature-card">
+            <h4>📱 Mobile-friendly</h4>
+            <p>Uses <code>inputmode="numeric"</code> so mobile devices show the number keyboard automatically.</p>
+        </div>
+        <div class="feature-card">
+            <h4>🔌 Works on any model</h4>
+            <p>Not tied to <code>hr.employee</code>. Use <code>widget="integer_percentage"</code> on any Integer field in any view.</p>
+        </div>
+        <div class="feature-card">
+            <h4>⚡ Pure OWL — zero Python</h4>
+            <p>The widget is implemented entirely in JavaScript / OWL. No Python model changes are required.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ── Usage ── -->
+<section class="oe_container oe_dark" style="padding: 40px 16px;">
+    <h3 class="section-title">How to use</h3>
+    <p>Simply add <code>widget="integer_percentage"</code> to any <code>&lt;field&gt;</code> tag whose underlying field is an <code>Integer</code>:</p>
+    <div class="code-block">
+<span class="tag">&lt;field</span> <span class="attr">name</span>=<span class="val">"completion_rate"</span> <span class="attr">widget</span>=<span class="val">"integer_percentage"</span><span class="tag">/&gt;</span><br/>
+<span class="tag">&lt;field</span> <span class="attr">name</span>=<span class="val">"discount_pct"</span>    <span class="attr">widget</span>=<span class="val">"integer_percentage"</span><span class="tag">/&gt;</span><br/>
+<span class="tag">&lt;field</span> <span class="attr">name</span>=<span class="val">"tax_rate"</span>        <span class="attr">widget</span>=<span class="val">"integer_percentage"</span> <span class="attr">placeholder</span>=<span class="val">"0"</span><span class="tag">/&gt;</span>
+    </div>
+    <p style="margin-top: 16px; font-size: 13px; color: #777;">
+        No configuration needed. The widget is registered globally as <code>integer_percentage</code>
+        and becomes available immediately after installing the module.
+    </p>
+</section>
+
+<!-- ── Compatibility ── -->
+<section class="oe_container" style="padding: 40px 16px;">
+    <h3 class="section-title">Compatibility</h3>
+    <table class="compare-table" style="max-width:400px;">
+        <thead>
+            <tr><th>Odoo version</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>18.0</td><td class="tick">✓ Supported</td></tr>
+            <tr><td>17.0 and below</td><td class="cross">✗ Not tested</td></tr>
+        </tbody>
+    </table>
+</section>
+
+</body>
+</html>
