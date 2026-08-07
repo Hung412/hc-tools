@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="hc_line_number.LineNumberCell">
+        <span class="o_line_number_cell d-block text-end" t-esc="props.getLineNumber(props.record)"/>
+    </t>
+
+    <t t-name="hc_line_number.ListRenderer" t-inherit="web.ListRenderer" t-inherit-mode="primary">
+        <xpath expr="//thead//th[@t-else]" position="inside">
+            <span t-if="column.label" class="d-block text-truncate text-end" t-esc="column.label"/>
+        </xpath>
+    </t>
+
+</templates>

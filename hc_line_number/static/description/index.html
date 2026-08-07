@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <style>
+        body { font-family: 'Roboto', sans-serif; color: #333; }
+        .oe_container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+        .oe_dark { background-color: #f9f9f9; }
+        h2.oe_slogan { font-size: 28px; font-weight: 700; color: #017e84; margin-bottom: 8px; }
+        h3.oe_slogan { font-size: 20px; font-weight: 600; color: #555; margin-top: 0; }
+        .feature-grid { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 24px; }
+        .feature-card {
+            flex: 1 1 260px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px 24px;
+            background: #fff;
+        }
+        .feature-card h4 { margin: 0 0 8px; font-size: 16px; color: #017e84; }
+        .feature-card p { margin: 0; font-size: 14px; line-height: 1.6; color: #555; }
+        .badge {
+            display: inline-block;
+            background: #017e84;
+            color: #fff;
+            border-radius: 4px;
+            padding: 2px 10px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 6px;
+        }
+        .code-block {
+            background: #272822;
+            color: #f8f8f2;
+            border-radius: 6px;
+            padding: 16px 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.7;
+            overflow-x: auto;
+        }
+        .code-block .attr  { color: #a6e22e; }
+        .code-block .val   { color: #e6db74; }
+        .code-block .tag   { color: #66d9ef; }
+        .compare-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 14px; }
+        .compare-table th { background: #017e84; color: #fff; padding: 10px 14px; text-align: left; }
+        .compare-table td { padding: 10px 14px; border-bottom: 1px solid #e0e0e0; }
+        .compare-table tr:nth-child(even) td { background: #f5f5f5; }
+        .tick { color: #00a854; font-weight: 700; }
+        .cross { color: #d9534f; font-weight: 700; }
+        .section-title { border-left: 4px solid #017e84; padding-left: 12px; margin: 32px 0 16px; }
+        .demo-list { width: 100%; max-width: 520px; border-collapse: collapse; margin-top: 16px; font-size: 14px; }
+        .demo-list th { background: #f0f0f0; color: #555; padding: 8px 12px; text-align: left; border-bottom: 2px solid #ddd; }
+        .demo-list td { padding: 8px 12px; border-bottom: 1px solid #eee; }
+        .demo-list .num { text-align: right; color: #017e84; font-weight: 700; width: 60px; }
+        .demo-list .drag { color: #bbb; width: 24px; }
+    </style>
+</head>
+<body>
+
+<!-- ── Hero ── -->
+<section class="oe_container" style="text-align:center; padding: 48px 16px;">
+    <h2 class="oe_slogan">Line Number Widget</h2>
+    <h3 class="oe_slogan">Add an automatic <strong>1, 2, 3…</strong> position column to your one2many &amp; many2many lists — with a single attribute</h3>
+    <p style="margin-top:16px;">
+        <span class="badge">Odoo 18</span>
+        <span class="badge">OWL</span>
+        <span class="badge">Zero Python</span>
+        <span class="badge">Any Model</span>
+    </p>
+</section>
+
+<!-- ── Problem ── -->
+<section class="oe_container oe_dark" style="padding: 40px 16px;">
+    <h3 class="section-title">Why not just display the <code>sequence</code> field?</h3>
+    <p>
+        Odoo's drag handle stores arbitrary gaps in the <code>sequence</code> field —
+        <code>10, 20, 30</code>, or after a few reorders <code>3, 7, 41</code>.
+        Showing that raw value to users is confusing. What they actually want to see
+        is the <strong>ordinal position</strong> of each row:
+    </p>
+    <table class="compare-table">
+        <thead>
+            <tr>
+                <th>Approach</th>
+                <th>Stored values</th>
+                <th>Displayed as</th>
+                <th>Readable?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>&lt;field name="sequence"/&gt;</code> (raw)</td>
+                <td>3, 7, 41</td>
+                <td>3, 7, 41</td>
+                <td class="cross">✗</td>
+            </tr>
+            <tr>
+                <td><code>widget="x2many_line_number"</code> (this module)</td>
+                <td>3, 7, 41</td>
+                <td>1, 2, 3</td>
+                <td class="tick">✓</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="demo-list">
+        <thead>
+            <tr><th></th><th style="text-align:right;">Priority</th><th>Name</th><th>Condition</th></tr>
+        </thead>
+        <tbody>
+            <tr><td class="drag">⠿</td><td class="num">1</td><td>VIP customers</td><td>&gt;</td></tr>
+            <tr><td class="drag">⠿</td><td class="num">2</td><td>Returning customers</td><td>&lt;=</td></tr>
+            <tr><td class="drag">⠿</td><td class="num">3</td><td>New leads</td><td>=</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- ── Features ── -->
+<section class="oe_container" style="padding: 40px 16px;">
+    <h3 class="section-title">Features</h3>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h4>True ordinal position</h4>
+            <p>Displays <code>1, 2, 3…</code> based on the row's actual position in the list — the stored value is never shown.</p>
+        </div>
+        <div class="feature-card">
+            <h4>Live renumbering</h4>
+            <p>Drag rows with the <code>handle</code> widget and the numbers update instantly. Add or remove a line — same thing.</p>
+        </div>
+        <div class="feature-card">
+            <h4>Pagination aware</h4>
+            <p>Page 2 continues where page 1 stopped: with 40 rows per page, the first row of page 2 shows <code>41</code>.</p>
+        </div>
+        <div class="feature-card">
+            <h4>One attribute, zero extra columns</h4>
+            <p>Set <code>widget="x2many_line_number"</code> on the one2many / many2many field itself — no need to add <code>sequence</code> twice, or to have a <code>sequence</code> field at all.</p>
+        </div>
+        <div class="feature-card">
+            <h4>Configurable header</h4>
+            <p>The column header defaults to <code>#</code> and can be changed with <code>options="{'line_number_string': 'Priority'}"</code>.</p>
+        </div>
+        <div class="feature-card">
+            <h4>Pure OWL — zero Python</h4>
+            <p>The widget is implemented entirely in JavaScript / OWL. No Python model changes, no stored data touched.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ── Usage ── -->
+<section class="oe_container oe_dark" style="padding: 40px 16px;">
+    <h3 class="section-title">How to use</h3>
+    <p>
+        Set the widget on the <strong>x2many field itself</strong> (one2many or many2many) —
+        the number column is inserted automatically, right after the drag handle:
+    </p>
+    <div class="code-block">
+<span class="tag">&lt;field</span> <span class="attr">name</span>=<span class="val">"group_ids"</span> <span class="attr">widget</span>=<span class="val">"x2many_line_number"</span> <span class="attr">options</span>=<span class="val">"{'line_number_string': 'Priority'}"</span><span class="tag">&gt;</span><br/>
+&#160;&#160;&#160;&#160;<span class="tag">&lt;list&gt;</span><br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="tag">&lt;field</span> <span class="attr">name</span>=<span class="val">"sequence"</span> <span class="attr">widget</span>=<span class="val">"handle"</span><span class="tag">/&gt;</span><br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="tag">&lt;field</span> <span class="attr">name</span>=<span class="val">"name"</span><span class="tag">/&gt;</span><br/>
+&#160;&#160;&#160;&#160;<span class="tag">&lt;/list&gt;</span><br/>
+<span class="tag">&lt;/field&gt;</span>
+    </div>
+    <p style="margin-top: 16px; font-size: 13px; color: #777;">
+        <code>line_number_string</code> is optional — the column header defaults to <code>#</code>.
+        The widget is registered globally as <code>x2many_line_number</code>
+        and becomes available immediately after installing the module.
+    </p>
+</section>
+
+<!-- ── Compatibility ── -->
+<section class="oe_container" style="padding: 40px 16px;">
+    <h3 class="section-title">Compatibility</h3>
+    <table class="compare-table" style="max-width:400px;">
+        <thead>
+            <tr><th>Odoo version</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>18.0</td><td class="tick">✓ Supported</td></tr>
+            <tr><td>17.0 and below</td><td class="cross">✗ Not tested</td></tr>
+        </tbody>
+    </table>
+</section>
+
+</body>
+</html>
