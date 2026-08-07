@@ -41,7 +41,7 @@ field is an ``Integer``:
         ],
     },
     "images": [
-        "static/description/icon.png",
+        "static/description/banner.png",
     ],
     "application": False,
     "installable": True,
