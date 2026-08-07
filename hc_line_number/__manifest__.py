@@ -47,7 +47,7 @@ Set the widget on the x2many field itself:
         ],
     },
     "images": [
-        "static/description/icon.png",
+        "static/description/banner.png",
     ],
     "application": False,
     "installable": True,
