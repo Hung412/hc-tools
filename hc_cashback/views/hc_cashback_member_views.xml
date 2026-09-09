@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hc_cashback_member_view_list" model="ir.ui.view">
+        <field name="name">hc.cashback.member.view.list</field>
+        <field name="model">hc.cashback.member</field>
+        <field name="arch" type="xml">
+            <list decoration-muted="is_blocked">
+                <field name="name"/>
+                <field name="zalo_user_id"/>
+                <field name="phone" optional="show"/>
+                <field name="bank_account_number" optional="hide"/>
+                <field name="balance_pending" sum="Pending"/>
+                <field name="balance_available" sum="Available"/>
+                <field name="is_blocked" column_invisible="1"/>
+                <field name="currency_id" column_invisible="1"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hc_cashback_member_view_form" model="ir.ui.view">
+        <field name="name">hc.cashback.member.view.form</field>
+        <field name="model">hc.cashback.member</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget name="web_ribbon" title="Blocked" bg_color="text-bg-danger" invisible="not is_blocked"/>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="partner_id"/>
+                            <field name="zalo_user_id"/>
+                            <field name="phone"/>
+                            <field name="is_blocked"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="balance_pending"/>
+                            <field name="balance_available"/>
+                        </group>
+                    </group>
+                    <group string="Bank Account">
+                        <group>
+                            <field name="bank_name"/>
+                            <field name="bank_account_number"/>
+                            <field name="bank_account_name"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Ledger">
+                            <field name="ledger_ids">
+                                <list decoration-muted="state == 'cancelled'" decoration-success="state == 'payable'">
+                                    <field name="date"/>
+                                    <field name="entry_type"/>
+                                    <field name="external_order_key" optional="hide"/>
+                                    <field name="note" optional="show"/>
+                                    <field name="amount" sum="Total"/>
+                                    <field name="state"/>
+                                    <field name="currency_id" column_invisible="1"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Links">
+                            <field name="link_ids">
+                                <list>
+                                    <field name="create_date"/>
+                                    <field name="clean_url"/>
+                                    <field name="tracking_url"/>
+                                    <field name="state"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="hc_cashback_member_view_search" model="ir.ui.view">
+        <field name="name">hc.cashback.member.view.search</field>
+        <field name="model">hc.cashback.member</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="zalo_user_id"/>
+                <field name="bank_account_number"/>
+                <filter name="filter_blocked" string="Blocked" domain="[('is_blocked', '=', True)]"/>
+                <filter name="filter_withdrawable" string="Has Available Balance" domain="[('ledger_ids.state', '=', 'payable')]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="hc_cashback_member_action" model="ir.actions.act_window">
+        <field name="name">Members</field>
+        <field name="res_model">hc.cashback.member</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

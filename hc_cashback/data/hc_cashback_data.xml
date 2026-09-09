@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="seq_hc_cashback_withdrawal" model="ir.sequence">
+            <field name="name">Cashback Withdrawal</field>
+            <field name="code">hc.cashback.withdrawal</field>
+            <field name="prefix">WD/%(year)s/</field>
+            <field name="padding">5</field>
+        </record>
+
+        <record id="commission_rule_default" model="hc.cashback.commission.rule">
+            <field name="name">Default 90/10</field>
+            <field name="date_from" eval="time.strftime('%Y-01-01')"/>
+            <field name="tax_rate">0.1</field>
+            <field name="member_share">0.9</field>
+        </record>
+
+        <record id="provider_shopee_direct" model="hc.cashback.provider">
+            <field name="name">Shopee Affiliate</field>
+            <field name="key">shopee_direct</field>
+            <field name="is_default" eval="True"/>
+        </record>
+
+        <record id="param_min_withdrawal_amount" model="ir.config_parameter">
+            <field name="key">hc_cashback.min_withdrawal_amount</field>
+            <field name="value">50000</field>
+        </record>
+
+    </data>
+</odoo>

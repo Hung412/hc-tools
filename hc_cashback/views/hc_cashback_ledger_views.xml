@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hc_cashback_ledger_view_list" model="ir.ui.view">
+        <field name="name">hc.cashback.ledger.view.list</field>
+        <field name="model">hc.cashback.ledger</field>
+        <field name="arch" type="xml">
+            <list decoration-success="state == 'payable'" decoration-muted="state == 'cancelled'"
+                  decoration-danger="amount &lt; 0" create="0">
+                <field name="date"/>
+                <field name="member_id"/>
+                <field name="entry_type"/>
+                <field name="provider_key" optional="hide"/>
+                <field name="external_order_key" optional="hide"/>
+                <field name="note" optional="show"/>
+                <field name="amount" sum="Total"/>
+                <field name="state"/>
+                <field name="currency_id" column_invisible="1"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hc_cashback_ledger_view_search" model="ir.ui.view">
+        <field name="name">hc.cashback.ledger.view.search</field>
+        <field name="model">hc.cashback.ledger</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="member_id"/>
+                <field name="external_order_key"/>
+                <filter name="filter_payable" string="Payable" domain="[('state', '=', 'payable')]"/>
+                <filter name="filter_pending" string="Not Settled" domain="[('state', 'in', ('pending', 'validated'))]"/>
+                <group expand="0" string="Group By">
+                    <filter name="groupby_member" string="Member" context="{'group_by': 'member_id'}"/>
+                    <filter name="groupby_type" string="Type" context="{'group_by': 'entry_type'}"/>
+                    <filter name="groupby_state" string="State" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="hc_cashback_ledger_action" model="ir.actions.act_window">
+        <field name="name">Ledger</field>
+        <field name="res_model">hc.cashback.ledger</field>
+        <field name="view_mode">list</field>
+    </record>
+
+</odoo>

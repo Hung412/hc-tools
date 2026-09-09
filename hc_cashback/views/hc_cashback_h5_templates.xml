@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="h5_layout" name="Cashback Mobile Layout">
+        &lt;!DOCTYPE html&gt;
+        <html>
+            <head>
+                <meta charset="utf-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+                <title t-out="page_title"/>
+                <style>
+                    :root { color-scheme: light dark; }
+                    * { box-sizing: border-box; }
+                    body { margin: 0; padding: 16px 14px 40px; font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+                           background: #f5f6f8; color: #16181d; font-size: 15px; line-height: 1.45; }
+                    .card { background: #fff; border-radius: 12px; padding: 14px; margin-bottom: 12px;
+                            box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+                    .amount { font-size: 26px; font-weight: 700; }
+                    .muted { color: #6b7280; font-size: 13px; }
+                    .row { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0;
+                           border-bottom: 1px solid #eef0f3; }
+                    .row:last-child { border-bottom: 0; }
+                    .tag { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: #eef0f3; }
+                    .tag.payable { background: #dcfce7; color: #14532d; }
+                    .tag.cancelled { background: #fee2e2; color: #7f1d1d; }
+                    label { display: block; font-size: 13px; color: #6b7280; margin: 10px 0 4px; }
+                    input { width: 100%; padding: 11px; border: 1px solid #d5d8dd; border-radius: 8px; font-size: 15px; }
+                    button { width: 100%; padding: 13px; margin-top: 12px; border: 0; border-radius: 8px;
+                             font-size: 15px; font-weight: 600; background: #2563eb; color: #fff; }
+                    button.secondary { background: #eef0f3; color: #16181d; }
+                    button[disabled] { opacity: .5; }
+                    .notice { background: #fef9c3; border-radius: 8px; padding: 10px; margin-bottom: 12px; font-size: 14px; }
+                </style>
+            </head>
+            <body>
+                <t t-out="0"/>
+            </body>
+        </html>
+    </template>
+
+    <template id="h5_expired" name="Cashback Link Expired">
+        <t t-call="hc_cashback.h5_layout">
+            <t t-set="page_title">Link expired</t>
+            <div class="card">
+                <div class="amount">Link expired</div>
+                <p class="muted">This page is only valid for 15 minutes. Send <b>LICHSU</b> to the Zalo account again to get a fresh link.</p>
+            </div>
+        </t>
+    </template>
+
+    <template id="h5_home" name="Cashback Member Page">
+        <t t-call="hc_cashback.h5_layout">
+            <t t-set="page_title">My cashback</t>
+
+            <div t-if="message" class="notice" t-out="message"/>
+
+            <div class="card">
+                <div class="muted">Available to withdraw</div>
+                <div class="amount" t-out="'{:,.0f}'.format(member.balance_available)"/>
+                <div class="muted">Pending: <span t-out="'{:,.0f}'.format(member.balance_pending)"/></div>
+            </div>
+
+            <form method="post" t-attf-action="/hc_cashback/h5/submit">
+                <input type="hidden" name="t" t-att-value="token"/>
+                <div class="card">
+                    <b>Bank account</b>
+                    <label for="bank_name">Bank</label>
+                    <input id="bank_name" name="bank_name" t-att-value="member.bank_name" required="required"/>
+                    <label for="bank_account_number">Account number</label>
+                    <input id="bank_account_number" name="bank_account_number" t-att-value="member.bank_account_number" required="required"/>
+                    <label for="bank_account_name">Account holder</label>
+                    <input id="bank_account_name" name="bank_account_name" t-att-value="member.bank_account_name" required="required"/>
+                    <button type="submit" class="secondary">Save</button>
+                    <button type="submit" name="withdraw" value="1" t-att-disabled="'disabled' if member.balance_available &lt;= 0 else None">
+                        Withdraw <t t-out="'{:,.0f}'.format(member.balance_available)"/>
+                    </button>
+                </div>
+            </form>
+
+            <div class="card" t-if="withdrawals">
+                <b>Withdrawals</b>
+                <div t-foreach="withdrawals" t-as="withdrawal" class="row">
+                    <div>
+                        <div t-out="withdrawal.name"/>
+                        <div class="muted" t-out="withdrawal.create_date"/>
+                    </div>
+                    <div style="text-align:right">
+                        <div t-out="'{:,.0f}'.format(withdrawal.amount)"/>
+                        <span class="tag" t-out="withdrawal.state"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <b>Recent orders</b>
+                <p t-if="not orders" class="muted">No order has been tracked yet. Orders usually appear a few hours after purchase.</p>
+                <div t-foreach="orders" t-as="order" class="row">
+                    <div>
+                        <div t-out="order.order_reference"/>
+                        <div class="muted" t-out="order.purchase_datetime"/>
+                    </div>
+                    <div style="text-align:right">
+                        <div t-out="'{:,.0f}'.format(order.member_amount)"/>
+                        <span t-attf-class="tag {{ order.status }}" t-out="order.status"/>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>

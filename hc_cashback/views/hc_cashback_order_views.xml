@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hc_cashback_order_view_list" model="ir.ui.view">
+        <field name="name">hc.cashback.order.view.list</field>
+        <field name="model">hc.cashback.order</field>
+        <field name="arch" type="xml">
+            <list decoration-success="status == 'payable'" decoration-muted="status == 'cancelled'">
+                <field name="purchase_datetime"/>
+                <field name="order_reference"/>
+                <field name="member_id"/>
+                <field name="provider_key" optional="hide"/>
+                <field name="order_amount" optional="show"/>
+                <field name="commission_gross" sum="Gross"/>
+                <field name="member_amount" sum="Member"/>
+                <field name="platform_amount" sum="Platform"/>
+                <field name="status"/>
+                <field name="currency_id" column_invisible="1"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hc_cashback_order_view_form" model="ir.ui.view">
+        <field name="name">hc.cashback.order.view.form</field>
+        <field name="model">hc.cashback.order</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="order_reference"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="member_id"/>
+                            <field name="link_id"/>
+                            <field name="provider_id"/>
+                            <field name="provider_key"/>
+                            <field name="external_order_key"/>
+                            <field name="status"/>
+                        </group>
+                        <group>
+                            <field name="purchase_datetime"/>
+                            <field name="commission_rule_id"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="order_amount"/>
+                            <field name="commission_gross"/>
+                            <field name="commission_net"/>
+                            <field name="member_amount"/>
+                            <field name="platform_amount"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Ledger">
+                            <field name="ledger_ids">
+                                <list>
+                                    <field name="date"/>
+                                    <field name="entry_type"/>
+                                    <field name="amount"/>
+                                    <field name="state"/>
+                                    <field name="currency_id" column_invisible="1"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Raw Payload" groups="hc_cashback.group_cashback_manager">
+                            <field name="raw_payload"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hc_cashback_order_view_search" model="ir.ui.view">
+        <field name="name">hc.cashback.order.view.search</field>
+        <field name="model">hc.cashback.order</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="order_reference"/>
+                <field name="member_id"/>
+                <field name="external_order_key"/>
+                <filter name="filter_pending" string="Pending" domain="[('status', '=', 'pending')]"/>
+                <filter name="filter_payable" string="Payable" domain="[('status', '=', 'payable')]"/>
+                <filter name="filter_unmatched" string="Unmatched" domain="[('member_id', '=', False)]"/>
+                <group expand="0" string="Group By">
+                    <filter name="groupby_member" string="Member" context="{'group_by': 'member_id'}"/>
+                    <filter name="groupby_status" string="Status" context="{'group_by': 'status'}"/>
+                    <filter name="groupby_month" string="Purchase Month" context="{'group_by': 'purchase_datetime:month'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="hc_cashback_order_action" model="ir.actions.act_window">
+        <field name="name">Affiliate Orders</field>
+        <field name="res_model">hc.cashback.order</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

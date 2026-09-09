@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hc_cashback_withdrawal_view_list" model="ir.ui.view">
+        <field name="name">hc.cashback.withdrawal.view.list</field>
+        <field name="model">hc.cashback.withdrawal</field>
+        <field name="arch" type="xml">
+            <list decoration-info="state == 'draft'" decoration-success="state == 'paid'"
+                  decoration-muted="state == 'rejected'">
+                <field name="name"/>
+                <field name="create_date"/>
+                <field name="member_id"/>
+                <field name="bank_account_number"/>
+                <field name="bank_account_name" optional="show"/>
+                <field name="amount" sum="Total"/>
+                <field name="state"/>
+                <field name="currency_id" column_invisible="1"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hc_cashback_withdrawal_view_form" model="ir.ui.view">
+        <field name="name">hc.cashback.withdrawal.view.form</field>
+        <field name="model">hc.cashback.withdrawal</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_approve" type="object" string="Approve"
+                            class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_mark_paid" type="object" string="Mark Paid"
+                            class="btn-primary" invisible="state != 'approved'"/>
+                    <button name="action_reject" type="object" string="Reject"
+                            invisible="state in ('paid', 'rejected')"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,approved,paid"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="member_id"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="amount"/>
+                            <field name="payment_reference" invisible="state == 'draft'"/>
+                            <field name="rejection_reason" invisible="state != 'rejected'"/>
+                        </group>
+                        <group>
+                            <field name="bank_name"/>
+                            <field name="bank_account_number"/>
+                            <field name="bank_account_name"/>
+                        </group>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="hc_cashback_withdrawal_action" model="ir.actions.act_window">
+        <field name="name">Withdrawals</field>
+        <field name="res_model">hc.cashback.withdrawal</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

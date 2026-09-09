@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_cashback_root" name="Cashback" sequence="70"
+              groups="hc_cashback.group_cashback_user"/>
+
+    <menuitem id="menu_cashback_member" name="Members" parent="menu_cashback_root"
+              action="hc_cashback_member_action" sequence="10"/>
+
+    <menuitem id="menu_cashback_order" name="Affiliate Orders" parent="menu_cashback_root"
+              action="hc_cashback_order_action" sequence="20"/>
+
+    <menuitem id="menu_cashback_ledger" name="Ledger" parent="menu_cashback_root"
+              action="hc_cashback_ledger_action" sequence="30"/>
+
+    <menuitem id="menu_cashback_withdrawal" name="Withdrawals" parent="menu_cashback_root"
+              action="hc_cashback_withdrawal_action" sequence="40"/>
+
+    <menuitem id="menu_cashback_link" name="Tracking Links" parent="menu_cashback_root"
+              action="hc_cashback_link_action" sequence="50"/>
+
+    <menuitem id="menu_cashback_configuration" name="Configuration" parent="menu_cashback_root"
+              sequence="90" groups="hc_cashback.group_cashback_manager"/>
+
+    <menuitem id="menu_cashback_provider" name="Affiliate Providers" parent="menu_cashback_configuration"
+              action="hc_cashback_provider_action" sequence="10"/>
+
+    <menuitem id="menu_cashback_commission_rule" name="Commission Rules" parent="menu_cashback_configuration"
+              action="hc_cashback_commission_rule_action" sequence="20"/>
+
+</odoo>
