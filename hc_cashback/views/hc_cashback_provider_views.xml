@@ -32,13 +32,14 @@
                         <group>
                             <field name="key"/>
                             <field name="is_default"/>
-                            <field name="endpoint_url"/>
+                            <field name="link_template" placeholder="https://shopee.vn/?mmp_pid=an_1&amp;utm_content={sub_ids}"/>
+                            <field name="endpoint_url" invisible="key != 'shopee_direct'"/>
                             <field name="request_timeout"/>
                             <field name="active" invisible="1"/>
                         </group>
                         <group>
-                            <field name="app_id" password="True"/>
-                            <field name="app_secret" password="True"/>
+                            <field name="app_id" password="True" invisible="key != 'shopee_direct'"/>
+                            <field name="app_secret" password="True" invisible="key != 'shopee_direct'"/>
                             <field name="sync_from_date"/>
                             <field name="sync_overlap_days"/>
                             <field name="last_sync_date"/>

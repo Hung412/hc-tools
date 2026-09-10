@@ -9,8 +9,6 @@ access_hc_cashback_provider_manager,access.hc.cashback.provider.manager,model_hc
 access_hc_cashback_member_user,access.hc.cashback.member.user,model_hc_cashback_member,hc_cashback.group_cashback_user,1,1,0,0
 access_hc_cashback_member_manager,access.hc.cashback.member.manager,model_hc_cashback_member,hc_cashback.group_cashback_manager,1,1,1,1
 
-access_hc_cashback_link_user,access.hc.cashback.link.user,model_hc_cashback_link,hc_cashback.group_cashback_user,1,0,0,0
-access_hc_cashback_link_manager,access.hc.cashback.link.manager,model_hc_cashback_link,hc_cashback.group_cashback_manager,1,1,1,1
 
 access_hc_cashback_order_user,access.hc.cashback.order.user,model_hc_cashback_order,hc_cashback.group_cashback_user,1,0,0,0
 access_hc_cashback_order_manager,access.hc.cashback.order.manager,model_hc_cashback_order,hc_cashback.group_cashback_manager,1,1,1,0

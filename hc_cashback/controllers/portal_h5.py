@@ -9,6 +9,16 @@ _logger = logging.getLogger(__name__)
 
 class HcCashbackPortalH5(http.Controller):
 
+    @http.route('/hc_cashback/go/<string:tracking_key>', type='http', auth='public', methods=['GET'])
+    def go_shopping(self, tracking_key, **kwargs):
+        """Stable entry point owned by us, so a provider switch never invalidates
+        the link members saved to their home screen."""
+        member = request.env['hc.cashback.member'].sudo().resolve_tracking_key(tracking_key)
+        if not member or not member.tracking_url:
+            return request.render('hc_cashback.h5_expired', {})
+        member.register_click()
+        return request.redirect(member.tracking_url, local=False)
+
     @http.route('/hc_cashback/h5/home', type='http', auth='public', methods=['GET'])
     def h5_home(self, t=None, message=None, **kwargs):
         try:

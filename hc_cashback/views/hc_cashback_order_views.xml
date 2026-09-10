@@ -30,23 +30,25 @@
                         <h1><field name="order_reference"/></h1>
                     </div>
                     <group>
-                        <group>
+                        <group string="Order">
                             <field name="member_id"/>
-                            <field name="link_id"/>
                             <field name="provider_id"/>
-                            <field name="provider_key"/>
-                            <field name="external_order_key"/>
+                            <field name="purchase_datetime"/>
+                            <field name="item_reference"/>
                             <field name="status"/>
                         </group>
-                        <group>
-                            <field name="purchase_datetime"/>
-                            <field name="commission_rule_id"/>
+                        <group string="Money">
                             <field name="currency_id" invisible="1"/>
                             <field name="order_amount"/>
                             <field name="commission_gross"/>
+                            <field name="commission_rule_id"/>
                             <field name="commission_net"/>
                             <field name="member_amount"/>
                             <field name="platform_amount"/>
+                        </group>
+                        <group string="Technical" groups="hc_cashback.group_cashback_manager">
+                            <field name="provider_key"/>
+                            <field name="external_order_key"/>
                         </group>
                     </group>
                     <notebook>

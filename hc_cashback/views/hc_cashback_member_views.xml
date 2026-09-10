@@ -42,6 +42,17 @@
                             <field name="balance_available"/>
                         </group>
                     </group>
+                    <group string="Shopping Link">
+                        <group>
+                            <field name="tracking_key"/>
+                            <field name="shopping_url" widget="CopyClipboardChar"/>
+                            <field name="tracking_url"/>
+                        </group>
+                        <group>
+                            <field name="click_count"/>
+                            <field name="last_click_datetime"/>
+                        </group>
+                    </group>
                     <group string="Bank Account">
                         <group>
                             <field name="bank_name"/>
@@ -60,16 +71,6 @@
                                     <field name="amount" sum="Total"/>
                                     <field name="state"/>
                                     <field name="currency_id" column_invisible="1"/>
-                                </list>
-                            </field>
-                        </page>
-                        <page string="Links">
-                            <field name="link_ids">
-                                <list>
-                                    <field name="create_date"/>
-                                    <field name="clean_url"/>
-                                    <field name="tracking_url"/>
-                                    <field name="state"/>
                                 </list>
                             </field>
                         </page>

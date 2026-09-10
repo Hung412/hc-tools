@@ -15,7 +15,7 @@ class HcCashbackZaloWebhook(http.Controller):
 
     def _help_text(self):
         return _(
-            "Paste a Shopee product link and I will send back your cashback link.\n"
+            "MUA - get your cashback shopping link\n"
             "SODU - check your balance\n"
             "LICHSU - order history\n"
             "RUT - withdraw"
@@ -55,25 +55,22 @@ class HcCashbackZaloWebhook(http.Controller):
     def _handle_message(self, zalo_user_id, text):
         member = request.env['hc.cashback.member'].sudo().get_or_create_from_zalo(zalo_user_id)
         command = text.replace(' ', '').lower()
-        if 'http' in text:
-            reply = self._reply_link(member, text)
-        elif command.startswith('sodu'):
+        if command.startswith('sodu'):
             reply = _("Pending: %(pending)s\nAvailable: %(available)s", pending=member.balance_pending, available=member.balance_available)
         elif command.startswith(('lichsu', 'rut')):
             reply = self._reply_page(member)
         else:
-            reply = self._help_text()
+            reply = self._reply_shopping_link(member)
         member.send_zalo_message(reply)
 
-    def _reply_link(self, member, text):
-        url = next((word for word in text.split() if word.startswith('http')), None)
-        if not url:
+    def _reply_shopping_link(self, member):
+        if not member.shopping_url:
             return self._help_text()
-        try:
-            link = request.env['hc.cashback.link'].sudo().create_for_url(member, url)
-        except UserError as error:
-            return str(error)
-        return _("Here is your cashback link:\n%s\n\nOpen it and complete the purchase in the same session.", link.tracking_url)
+        return _(
+            "Your cashback shopping link:\n%s\n\n"
+            "Open it first, then buy as usual in the same session. "
+            "Save it to your home screen so you never forget.",
+            member.shopping_url)
 
     def _reply_page(self, member):
         base_url = request.env['ir.config_parameter'].sudo().get_param('web.base.url')

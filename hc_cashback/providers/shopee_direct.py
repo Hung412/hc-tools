@@ -22,6 +22,11 @@ from .base import (
 
 _logger = logging.getLogger(__name__)
 
+LANDING_URL = 'https://shopee.vn/'
+SUB_ID_SLOTS = 5
+SUB_ID_SEPARATOR = '-'
+SUB_ID_RE = re.compile(r'^[A-Za-z0-9]*$')
+
 ITEM_URL_RE = re.compile(r'-i\.(\d+)\.(\d+)')
 PRODUCT_URL_RE = re.compile(r'/product/(\d+)/(\d+)')
 
@@ -67,6 +72,20 @@ query ($start: Int64!, $end: Int64!, $limit: Int, $scrollId: String) {
   }
 }
 """
+
+
+def format_sub_ids(sub_ids):
+    """Shopee packs five alphanumeric slots into utm_content, joined by a dash."""
+    slots = (list(sub_ids) + [''] * SUB_ID_SLOTS)[:SUB_ID_SLOTS]
+    invalid = [slot for slot in slots if not SUB_ID_RE.match(slot)]
+    if invalid:
+        raise UserError(_('Shopee only accepts letters and digits in a sub id: %s', ', '.join(invalid)))
+    return SUB_ID_SEPARATOR.join(slots)
+
+
+def parse_sub_ids(utm_content):
+    """Keep empty slots so positions stay meaningful."""
+    return (utm_content or '').split(SUB_ID_SEPARATOR)
 
 
 @register('shopee_direct', 'Shopee Affiliate (direct account)')
@@ -142,7 +161,7 @@ class ShopeeDirectProvider(AffiliateProvider):
     # -- provider api ------------------------------------------------------
 
     def build_link(self, clean_url, sub_ids):
-        variables = {'input': {'originUrl': clean_url, 'subIds': list(sub_ids[:5])}}
+        variables = {'input': {'originUrl': clean_url or LANDING_URL, 'subIds': list(sub_ids[:5])}}
         data = self._call(SHORT_LINK_MUTATION, variables)
         short_link = (data.get('generateShortLink') or {}).get('shortLink')
         if not short_link:
@@ -169,7 +188,7 @@ class ShopeeDirectProvider(AffiliateProvider):
     def _parse_nodes(self, nodes):
         conversions = []
         for node in nodes:
-            sub_ids = [part for part in (node.get('utmContent') or '').split('|') if part]
+            sub_ids = parse_sub_ids(node.get('utmContent'))
             purchase_datetime = None
             if node.get('purchaseTime'):
                 purchase_datetime = datetime.utcfromtimestamp(int(node['purchaseTime']))

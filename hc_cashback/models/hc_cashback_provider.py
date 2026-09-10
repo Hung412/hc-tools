@@ -22,6 +22,9 @@ class HcCashbackProvider(models.Model):
     is_default = fields.Boolean(help="Provider used when generating new tracking links.")
     endpoint_url = fields.Char(default='https://open-api.affiliate.shopee.vn/graphql')
     request_timeout = fields.Integer(default=20)
+    link_template = fields.Char(
+        help="A link produced by the marketplace with its sub id placeholder written "
+             "as {sub_ids}, e.g. https://shopee.vn/?mmp_pid=an_1&utm_content={sub_ids}")
     app_id = fields.Char(groups='hc_cashback.group_cashback_manager')
     app_secret = fields.Char(groups='hc_cashback.group_cashback_manager')
     sync_from_date = fields.Date(

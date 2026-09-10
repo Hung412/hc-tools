@@ -40,14 +40,18 @@ class HcCashbackCommissionRule(models.Model):
                 raise UserError(_('End date must be after start date.'))
 
     @api.model
-    def _get_for_date(self, date=None):
+    def _find_for_date(self, date=None):
         date = date or fields.Date.context_today(self)
-        rule = self.search([
+        return self.search([
             ('date_from', '<=', date),
             '|', ('date_to', '=', False), ('date_to', '>=', date),
         ], limit=1)
+
+    @api.model
+    def _get_for_date(self, date=None):
+        rule = self._find_for_date(date)
         if not rule:
-            raise UserError(_('No cashback commission rule is active on %s.', date))
+            raise UserError(_('No cashback commission rule is active on %s.', date or fields.Date.context_today(self)))
         return rule
 
     def split(self, commission_gross):
