@@ -28,6 +28,11 @@ class HcCashbackMember(models.Model):
     tracking_key = fields.Char(required=True, index=True, copy=False,
                                default=lambda self: uuid.uuid4().hex[:16],
                                help="Alphanumeric sub id carried by this member's shopping link.")
+    portal_key = fields.Char(
+        index=True, copy=False, default=lambda self: uuid.uuid4().hex,
+        help="Secret in the member's permanent page URL; anyone holding it can see the balance.")
+    portal_url = fields.Char(compute='_compute_urls',
+                             help="Permanent page handed to the member once.")
     tracking_url = fields.Char(compute='_compute_urls',
                                help="The marketplace link this member's traffic is attributed to.")
     shopping_url = fields.Char(compute='_compute_urls',
@@ -47,7 +52,17 @@ class HcCashbackMember(models.Model):
     _sql_constraints = [
         ('unique_zalo_user_id', 'UNIQUE(zalo_user_id)', 'This Zalo account is already registered.'),
         ('unique_tracking_key', 'UNIQUE(tracking_key)', 'Tracking key must be unique.'),
+        ('unique_portal_key', 'UNIQUE(portal_key)', 'Portal key must be unique.'),
     ]
+
+    def init(self):
+        # A column added to existing rows receives one shared default value, which
+        # would collide with the unique index, so give each row its own key.
+        self.env.cr.execute("""
+            UPDATE hc_cashback_member
+               SET portal_key = md5(random()::text || id::text)
+             WHERE portal_key IS NULL
+        """)
 
     @api.depends('ledger_ids.state', 'ledger_ids.amount')
     def _compute_balances(self):
@@ -64,13 +79,14 @@ class HcCashbackMember(models.Model):
             else:
                 member.balance_pending += amount
 
-    @api.depends('tracking_key')
+    @api.depends('tracking_key', 'portal_key')
     def _compute_urls(self):
         base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url', '').rstrip('/')
         provider = self.env['hc.cashback.provider'].search([('is_default', '=', True)], limit=1)
         implementation = provider.get_implementation() if provider else None
         for r in self:
             r.shopping_url = '%s/hc_cashback/go/%s' % (base_url, r.tracking_key) if base_url else False
+            r.portal_url = '%s/hc_cashback/me/%s' % (base_url, r.portal_key) if base_url else False
             try:
                 r.tracking_url = implementation.build_link(None, [str(r.id), r.tracking_key])
             except (AttributeError, UserError):
@@ -86,6 +102,10 @@ class HcCashbackMember(models.Model):
             'company_id': False,
         })
         return self.create({'partner_id': partner.id, 'zalo_user_id': zalo_user_id})
+
+    @api.model
+    def resolve_portal_key(self, portal_key):
+        return self.search([('portal_key', '=', portal_key)], limit=1) if portal_key else self.browse()
 
     @api.model
     def resolve_tracking_key(self, tracking_key):
@@ -128,6 +148,20 @@ class HcCashbackMember(models.Model):
         if not member:
             raise AccessDenied()
         return member
+
+    def action_send_test_message(self):
+        """Prove the Zalo credentials end to end during setup."""
+        self.ensure_one()
+        if not self.send_zalo_message(_('Test message from your cashback account.')):
+            raise UserError(_(
+                'Zalo did not accept the message. Check the server log for the reason: the '
+                'access token may be missing, or this member may not have written to the '
+                'Official Account within the last 48 hours.'))
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'display_notification',
+            'params': {'message': _('Test message sent.'), 'type': 'success'},
+        }
 
     def send_zalo_message(self, text):
         """Push a message to the member through the Zalo Official Account API."""

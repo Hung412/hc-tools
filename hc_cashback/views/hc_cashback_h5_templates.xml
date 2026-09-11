@@ -29,6 +29,10 @@
                              font-size: 15px; font-weight: 600; background: #2563eb; color: #fff; }
                     button.secondary { background: #eef0f3; color: #16181d; }
                     button[disabled] { opacity: .5; }
+                    a.shop { display: block; text-align: center; text-decoration: none; padding: 16px;
+                             border-radius: 10px; background: #ee4d2d; color: #fff; font-size: 17px;
+                             font-weight: 700; }
+                    a.shop.off { background: #d5d8dd; color: #6b7280; pointer-events: none; }
                     .notice { background: #fef9c3; border-radius: 8px; padding: 10px; margin-bottom: 12px; font-size: 14px; }
                 </style>
             </head>
@@ -40,10 +44,10 @@
 
     <template id="h5_expired" name="Cashback Link Expired">
         <t t-call="hc_cashback.h5_layout">
-            <t t-set="page_title">Link expired</t>
+            <t t-set="page_title">Link not valid</t>
             <div class="card">
-                <div class="amount">Link expired</div>
-                <p class="muted">This page is only valid for 15 minutes. Send <b>LICHSU</b> to the Zalo account again to get a fresh link.</p>
+                <div class="amount">Link not valid</div>
+                <p class="muted">This link no longer works. Please ask for your personal cashback page link again.</p>
             </div>
         </t>
     </template>
@@ -55,6 +59,15 @@
             <div t-if="message" class="notice" t-out="message"/>
 
             <div class="card">
+                <a t-att-href="member.shopping_url or '#'"
+                   t-attf-class="shop {{ '' if member.shopping_url else 'off' }}">Shop with cashback</a>
+                <p class="muted" style="margin-bottom:0">
+                    Open this first, then buy as usual in the same session. Add this page to your
+                    home screen so it is always one tap away.
+                </p>
+            </div>
+
+            <div class="card">
                 <div class="muted">Available to withdraw</div>
                 <div class="amount" t-out="'{:,.0f}'.format(member.balance_available)"/>
                 <div class="muted">Pending: <span t-out="'{:,.0f}'.format(member.balance_pending)"/></div>
@@ -62,6 +75,7 @@
 
             <form method="post" t-attf-action="/hc_cashback/h5/submit">
                 <input type="hidden" name="t" t-att-value="token"/>
+                <input type="hidden" name="portal_key" t-att-value="portal_key"/>
                 <div class="card">
                     <b>Bank account</b>
                     <label for="bank_name">Bank</label>

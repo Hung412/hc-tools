@@ -1,0 +1,1617 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hc_cashback
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-11 02:46+0000\n"
+"PO-Revision-Date: 2026-09-11 02:46+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_withdrawal.py:0
+msgid "%s no longer has enough available balance."
+msgstr "%s không còn đủ số dư khả dụng."
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid "<b>Bank account</b>"
+msgstr "<b>Tài khoản ngân hàng</b>"
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid "<b>Recent orders</b>"
+msgstr "<b>Đơn hàng gần đây</b>"
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid "<b>Withdrawals</b>"
+msgstr "<b>Lệnh rút tiền</b>"
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_provider__link_template
+msgid ""
+"A link produced by the marketplace with its sub id placeholder written as "
+"{sub_ids}, e.g. https://shopee.vn/?mmp_pid=an_1&utm_content={sub_ids}"
+msgstr "Một link do sàn tạo ra, với chỗ đặt sub id được viết thành {sub_ids}, ví dụ https://shopee.vn/?mmp_pid=an_1&utm_content={sub_ids}"
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid "Account holder"
+msgstr "Chủ tài khoản"
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid "Account number"
+msgstr "Số tài khoản"
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__message_needaction
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__message_needaction
+msgid "Action Needed"
+msgstr "Tác vụ cần thiết"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__active
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__active
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__active
+msgid "Active"
+msgstr "Đang hoạt động"
+
+
+#. module: hc_cashback
+#: model:ir.actions.act_window,name:hc_cashback.hc_cashback_order_action
+#: model:ir.ui.menu,name:hc_cashback.menu_cashback_order
+msgid "Affiliate Orders"
+msgstr "Đơn tiếp thị liên kết"
+
+
+#. module: hc_cashback
+#: model:ir.actions.act_window,name:hc_cashback.hc_cashback_provider_action
+#: model:ir.ui.menu,name:hc_cashback.menu_cashback_provider
+msgid "Affiliate Providers"
+msgstr "Nhà cung cấp tiếp thị liên kết"
+
+
+#. module: hc_cashback
+#: model:res.groups,name:hc_cashback.group_cashback_user
+msgid "Agent"
+msgstr "Nhân viên"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_member__tracking_key
+msgid "Alphanumeric sub id carried by this member's shopping link."
+msgstr "Sub id chỉ gồm chữ và số, đi kèm link mua sắm của thành viên này."
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__amount
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__amount
+msgid "Amount"
+msgstr "Số tiền"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__app_id
+msgid "App"
+msgstr "App ID"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__app_secret
+msgid "App Secret"
+msgstr "Khóa bí mật ứng dụng"
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_withdrawal_view_form
+msgid "Approve"
+msgstr "Duyệt"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_withdrawal__state__approved
+msgid "Approved"
+msgstr "Đã duyệt"
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_commission_rule_view_form
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_provider_view_form
+msgid "Archived"
+msgstr "Đã lưu trữ"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__message_attachment_count
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__message_attachment_count
+msgid "Attachment Count"
+msgstr "Số lượng tệp đính kèm"
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/controllers/zalo.py:0
+msgid "Authorisation rejected: unexpected callback state."
+msgstr "Từ chối cấp quyền: state trả về không khớp."
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_member_view_list
+msgid "Available"
+msgstr "Có thể rút"
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid "Available to withdraw"
+msgstr "Có thể rút"
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__balance_available
+msgid "Balance Available"
+msgstr "Số dư có thể rút"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__balance_pending
+msgid "Balance Pending"
+msgstr "Số dư đang chờ"
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid "Bank"
+msgstr "Ngân hàng"
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_member_view_form
+msgid "Bank Account"
+msgstr "Tài khoản ngân hàng"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__bank_account_name
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__bank_account_name
+msgid "Bank Account Name"
+msgstr "Chủ tài khoản"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__bank_account_number
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__bank_account_number
+msgid "Bank Account Number"
+msgstr "Số tài khoản"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__bank_name
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__bank_name
+msgid "Bank Name"
+msgstr "Tên ngân hàng"
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_member_view_form
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_member_view_search
+msgid "Blocked"
+msgstr "Bị khóa"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_member__is_blocked
+msgid "Blocked members can no longer shop or withdraw."
+msgstr "Thành viên bị khóa không thể mua sắm hay rút tiền."
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_import_wizard_view_form
+msgid "Cancel"
+msgstr "Hủy"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_ledger__state__cancelled
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_order__status__cancelled
+msgid "Cancelled"
+msgstr "Đã hủy"
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_direct.py:0
+msgid "Cannot open this shortened link. Please paste the full product link."
+msgstr "Không mở được link rút gọn này. Bạn hãy dán link sản phẩm đầy đủ."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_direct.py:0
+msgid "Cannot reach the Shopee affiliate API."
+msgstr "Không kết nối được tới API Shopee Affiliate."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_zalo.py:0
+msgid "Cannot reach the Zalo authorisation service."
+msgstr "Không kết nối được tới dịch vụ cấp quyền Zalo."
+
+
+#. module: hc_cashback
+#: model:ir.module.category,name:hc_cashback.module_category_cashback
+#: model:ir.ui.menu,name:hc_cashback.menu_cashback_root
+msgid "Cashback"
+msgstr "Hoàn tiền"
+
+
+#. module: hc_cashback
+#: model:ir.model,name:hc_cashback.model_hc_cashback_order
+msgid "Cashback Affiliate Order"
+msgstr "Đơn tiếp thị liên kết"
+
+
+#. module: hc_cashback
+#: model:ir.model,name:hc_cashback.model_hc_cashback_provider
+msgid "Cashback Affiliate Provider"
+msgstr "Nhà cung cấp tiếp thị liên kết"
+
+
+#. module: hc_cashback
+#: model:ir.model,name:hc_cashback.model_hc_cashback_commission_rule
+msgid "Cashback Commission Rule"
+msgstr "Quy tắc chia hoa hồng"
+
+
+#. module: hc_cashback
+#: model:ir.model,name:hc_cashback.model_hc_cashback_ledger
+msgid "Cashback Ledger Entry"
+msgstr "Bút toán sổ cái"
+
+
+#. module: hc_cashback
+#: model:ir.model,name:hc_cashback.model_hc_cashback_member
+msgid "Cashback Member"
+msgstr "Thành viên hoàn tiền"
+
+
+#. module: hc_cashback
+#: model:ir.model,name:hc_cashback.model_hc_cashback_withdrawal
+msgid "Cashback Withdrawal Request"
+msgstr "Yêu cầu rút tiền"
+
+
+#. module: hc_cashback
+#: model:ir.actions.server,name:hc_cashback.cron_refresh_zalo_token_ir_actions_server
+msgid "Cashback: refresh Zalo access token"
+msgstr "Hoàn tiền: gia hạn token Zalo"
+
+
+#. module: hc_cashback
+#: model:ir.actions.server,name:hc_cashback.cron_sync_conversions_ir_actions_server
+msgid "Cashback: sync affiliate conversions"
+msgstr "Hoàn tiền: đồng bộ đơn tiếp thị liên kết"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__click_count
+msgid "Click Count"
+msgstr "Số lượt click"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__click_datetime
+msgid "Click Datetime"
+msgstr "Thời điểm click"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_ledger__entry_type__earn
+msgid "Commission Earned"
+msgstr "Ghi nhận hoa hồng"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__commission_gross
+msgid "Commission Gross"
+msgstr "Hoa hồng gộp"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__commission_net
+msgid "Commission Net"
+msgstr "Hoa hồng ròng"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_ledger__entry_type__reversal
+msgid "Commission Reversed"
+msgstr "Đảo hoa hồng"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__commission_rule_id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__commission_rule_id
+msgid "Commission Rule"
+msgstr "Quy tắc chia"
+
+
+#. module: hc_cashback
+#: model:ir.actions.act_window,name:hc_cashback.hc_cashback_commission_rule_action
+#: model:ir.ui.menu,name:hc_cashback.menu_cashback_commission_rule
+msgid "Commission Rules"
+msgstr "Quy tắc chia hoa hồng"
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_order.py:0
+msgid "Commission corrected on %s."
+msgstr "Đã điều chỉnh hoa hồng của đơn %s."
+
+
+#. module: hc_cashback
+#: model:ir.ui.menu,name:hc_cashback.menu_cashback_configuration
+msgid "Configuration"
+msgstr "Cấu hình"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_provider__sync_from_date
+msgid "Conversions are never fetched before this date."
+msgstr "Không bao giờ lấy đơn phát sinh trước ngày này."
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__create_uid
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_import_wizard__create_uid
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__create_uid
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__create_uid
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__create_uid
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__create_uid
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__create_date
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_import_wizard__create_date
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__create_date
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__create_date
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__create_date
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__create_date
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__create_date
+msgid "Created on"
+msgstr "Được tạo vào"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__currency_id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__currency_id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__currency_id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__currency_id
+msgid "Currency"
+msgstr "Tiền tệ"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__date
+msgid "Date"
+msgstr "Ngày"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__date_from
+msgid "Date From"
+msgstr "Từ ngày"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__date_to
+msgid "Date To"
+msgstr "Đến ngày"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__display_name
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_import_wizard__display_name
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__display_name
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__display_name
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__display_name
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__display_name
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_commission_rule.py:0
+msgid "End date must be after start date."
+msgstr "Ngày kết thúc phải sau ngày bắt đầu."
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__endpoint_url
+msgid "Endpoint Url"
+msgstr "Địa chỉ endpoint"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__entry_type
+msgid "Entry Type"
+msgstr "Loại bút toán"
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_import_wizard_view_form
+msgid ""
+"Export the conversion report from the affiliate dashboard with every\n"
+"                    column enabled, including Sub_id1 to Sub_id5. Importing the same file\n"
+"                    twice is safe: existing order lines are updated, never duplicated."
+msgstr "Xuất báo cáo chuyển đổi từ trang tiếp thị liên kết với đầy đủ các cột, bao gồm Sub_id1 đến Sub_id5. Nhập lại cùng một tệp là an toàn: dòng đã có sẽ được cập nhật, không bị nhân đôi."
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__external_order_key
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__external_order_key
+msgid "External Order Key"
+msgstr "Khóa đơn bên ngoài"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__message_follower_ids
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__message_follower_ids
+msgid "Followers"
+msgstr "Người theo dõi"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__message_partner_ids
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Người theo dõi (Đối tác)"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_order__provider_key
+msgid "Frozen at creation so history survives a provider switch."
+msgstr "Ghim lại lúc tạo, để lịch sử không đổi khi chuyển sang nhà cung cấp khác."
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_list
+msgid "Gross"
+msgstr "Gộp"
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_ledger_view_search
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_search
+msgid "Group By"
+msgstr "Nhóm theo"
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_member_view_search
+msgid "Has Available Balance"
+msgstr "Có số dư rút được"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__has_message
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__has_message
+msgid "Has Message"
+msgstr "Có tin nhắn"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_provider__sync_overlap_days
+msgid "How far back each run re-reads, so late status changes are picked up."
+msgstr "Mỗi lần chạy đọc lùi bao nhiêu ngày, để bắt được đơn đổi trạng thái muộn."
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_import_wizard__id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__id
+msgid "ID"
+msgstr "ID"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_member__message_needaction
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_withdrawal__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Nếu chọn, bạn cần chú ý tới các tin nhắn mới."
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_member__message_has_error
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_withdrawal__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Nếu chọn, một số tin nhắn sẽ có lỗi gửi."
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_import_wizard_view_form
+msgid "Import"
+msgstr "Nhập"
+
+
+#. module: hc_cashback
+#: model:ir.model,name:hc_cashback.model_hc_cashback_import_wizard
+msgid "Import Affiliate Conversion Report"
+msgstr "Nhập báo cáo chuyển đổi"
+
+
+#. module: hc_cashback
+#: model:ir.actions.act_window,name:hc_cashback.hc_cashback_import_wizard_action
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_import_wizard_view_form
+msgid "Import Conversion Report"
+msgstr "Nhập báo cáo chuyển đổi"
+
+
+#. module: hc_cashback
+#: model:ir.ui.menu,name:hc_cashback.menu_cashback_import
+msgid "Import Report"
+msgstr "Nhập báo cáo"
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/wizard/hc_cashback_import_wizard.py:0
+msgid "Imported Orders"
+msgstr "Đơn đã nhập"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__is_blocked
+msgid "Is Blocked"
+msgstr "Bị khóa"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__is_default
+msgid "Is Default"
+msgstr "Mặc định"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__message_is_follower
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__message_is_follower
+msgid "Is Follower"
+msgstr "Là người theo dõi"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__item_reference
+msgid "Item Reference"
+msgstr "Mã sản phẩm"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__key
+msgid "Key"
+msgstr "Khoá"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__last_click_datetime
+msgid "Last Click Datetime"
+msgstr "Lần click gần nhất"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__last_sync_date
+msgid "Last Sync Date"
+msgstr "Đồng bộ lần cuối"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__write_uid
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_import_wizard__write_uid
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__write_uid
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__write_uid
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__write_uid
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__write_uid
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__write_date
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_import_wizard__write_date
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__write_date
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__write_date
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__write_date
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__write_date
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+
+#. module: hc_cashback
+#: model:ir.actions.act_window,name:hc_cashback.hc_cashback_ledger_action
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__ledger_ids
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__ledger_ids
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__ledger_ids
+#: model:ir.ui.menu,name:hc_cashback.menu_cashback_ledger
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_member_view_form
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_form
+msgid "Ledger"
+msgstr "Sổ cái"
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_ledger.py:0
+msgid "Ledger entries are immutable. Post an adjustment entry instead."
+msgstr "Bút toán không được phép sửa. Hãy ghi một bút toán điều chỉnh."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_ledger.py:0
+msgid "Ledger entries cannot be deleted. Post an adjustment entry instead."
+msgstr "Bút toán không được phép xóa. Hãy ghi một bút toán điều chỉnh."
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__link_template
+msgid "Link Template"
+msgstr "Khuôn link"
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_expired
+msgid "Link not valid"
+msgstr "Liên kết không dùng được"
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/controllers/zalo.py:0
+msgid ""
+"MUA - get your cashback shopping link\n"
+"SODU - check your balance\n"
+"LICHSU - order history\n"
+"RUT - withdraw"
+msgstr ""
+"MUA - lấy link mua sắm hoàn tiền\n"
+"SODU - xem số dư\n"
+"LICHSU - lịch sử đơn\n"
+"RUT - rút tiền"
+
+#. module: hc_cashback
+#: model:res.groups,name:hc_cashback.group_cashback_manager
+msgid "Manager"
+msgstr "Quản lý"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_ledger__entry_type__adjustment
+msgid "Manual Adjustment"
+msgstr "Điều chỉnh thủ công"
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_withdrawal_view_form
+msgid "Mark Paid"
+msgstr "Đánh dấu đã chi"
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_form
+msgid "Mark Settled"
+msgstr "Đánh dấu đã đối soát"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__member_id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__member_id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__member_id
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_ledger_view_search
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_list
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_search
+msgid "Member"
+msgstr "Thành viên"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__member_amount
+msgid "Member Amount"
+msgstr "Phần thành viên"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__member_share
+msgid "Member Share"
+msgstr "Tỷ lệ thành viên"
+
+
+#. module: hc_cashback
+#: model:ir.model.constraint,message:hc_cashback.constraint_hc_cashback_commission_rule_check_member_share
+msgid "Member share must be between 0 and 1."
+msgstr "Tỷ lệ thành viên phải nằm trong khoảng 0 đến 1."
+
+
+#. module: hc_cashback
+#: model:ir.actions.act_window,name:hc_cashback.hc_cashback_member_action
+#: model:ir.ui.menu,name:hc_cashback.menu_cashback_member
+msgid "Members"
+msgstr "Thành viên"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__message_has_error
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__message_has_error
+msgid "Message Delivery error"
+msgstr "Lỗi gửi tin nhắn"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__message_ids
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__message_ids
+msgid "Messages"
+msgstr "Tin nhắn"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__model_reference
+msgid "Model Reference"
+msgstr "Mã biến thể"
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_form
+msgid "Money"
+msgstr "Tiền"
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid "My cashback"
+msgstr "Hoàn tiền của tôi"
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__name
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__name
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__name
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__name
+msgid "Name"
+msgstr "Tên"
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_withdrawal.py:0
+msgid "New"
+msgstr "Mới"
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_zalo.py:0
+msgid "No Zalo refresh token stored. Run the Zalo authorisation once."
+msgstr "Chưa lưu refresh token Zalo. Hãy chạy cấp quyền Zalo một lần."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_provider.py:0
+msgid "No affiliate provider is configured."
+msgstr "Chưa cấu hình nhà cung cấp tiếp thị liên kết nào."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_commission_rule.py:0
+msgid "No cashback commission rule is active on %s."
+msgstr "Không có quy tắc chia hoa hồng nào hiệu lực vào ngày %s."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_provider.py:0
+msgid "No implementation is registered for provider %s."
+msgstr "Chưa có phần cài đặt nào cho nhà cung cấp %s."
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid ""
+"No order has been tracked yet. Orders usually appear a few hours after "
+"purchase."
+msgstr ""
+"Chưa ghi nhận đơn nào. Đơn thường xuất hiện sau vài giờ kể từ lúc mua."
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_ledger_view_search
+msgid "Not Settled"
+msgstr "Chưa đối soát"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__note
+msgid "Note"
+msgstr "Ghi chú"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__message_needaction_counter
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Số lượng tác vụ"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__message_has_error_counter
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__message_has_error_counter
+msgid "Number of errors"
+msgstr "Số lượng lỗi"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_member__message_needaction_counter
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_withdrawal__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Số tin nhắn cần xử lý"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_member__message_has_error_counter
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_withdrawal__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Số tin nhắn bị gửi lỗi"
+
+
+#. module: hc_cashback
+#: model:ir.model.constraint,message:hc_cashback.constraint_hc_cashback_provider_unique_key
+msgid "One configuration per affiliate provider."
+msgstr "Mỗi nhà cung cấp chỉ có một cấu hình."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_withdrawal.py:0
+msgid "Only a requested withdrawal can be approved."
+msgstr "Chỉ duyệt được lệnh rút đang ở trạng thái yêu cầu."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_withdrawal.py:0
+msgid "Only an approved withdrawal can be marked as paid."
+msgstr "Chỉ đánh dấu đã chi được với lệnh rút đã duyệt."
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid ""
+"Open this first, then buy as usual in the same session. Add this page to your\n"
+"                    home screen so it is always one tap away."
+msgstr ""
+"Bấm nút này trước, rồi mua sắm như bình thường trong cùng phiên. Lưu trang "
+"này vào màn hình chính để lúc nào cũng mở được bằng một chạm."
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/controllers/zalo.py:0
+msgid ""
+"Open your cashback page (valid 15 minutes):\n"
+"%s/hc_cashback/h5/home?t=%s"
+msgstr "Mở trang hoàn tiền của bạn (dùng được 15 phút):\n%s/hc_cashback/h5/home?t=%s"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__order_id
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_form
+msgid "Order"
+msgstr "Đơn hàng"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__order_amount
+msgid "Order Amount"
+msgstr "Giá trị đơn hàng"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__order_reference
+msgid "Order Reference"
+msgstr "Mã đơn hàng"
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_order.py:0
+msgid "Order cancelled or returned after settlement."
+msgstr "Đơn bị hủy hoặc hoàn sau khi đã đối soát."
+
+
+#. module: hc_cashback
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_withdrawal__state__paid
+msgid "Paid"
+msgstr "Đã chi trả"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__partner_id
+msgid "Partner"
+msgstr "Đối tác"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_ledger__state__payable
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_order__status__payable
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_ledger_view_search
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_search
+msgid "Payable"
+msgstr "Có thể chi trả"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__payment_reference
+msgid "Payment Reference"
+msgstr "Mã giao dịch chi trả"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_ledger__state__pending
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_order__status__pending
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_member_view_list
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_search
+msgid "Pending"
+msgstr "Đang chờ"
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid "Pending:"
+msgstr "Đang chờ:"
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/controllers/zalo.py:0
+msgid ""
+"Pending: %(pending)s\n"
+"Available: %(available)s"
+msgstr ""
+"Đang chờ: %(pending)s\n"
+"Có thể rút: %(available)s"
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_member__portal_url
+msgid "Permanent page handed to the member once."
+msgstr "Trang cố định, chỉ cần gửi cho thành viên một lần."
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__phone
+msgid "Phone"
+msgstr "Điện thoại"
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_list
+msgid "Platform"
+msgstr "Nền tảng"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__platform_amount
+msgid "Platform Amount"
+msgstr "Phần nền tảng"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__platform_share
+msgid "Platform Share"
+msgstr "Tỷ lệ nền tảng"
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_withdrawal.py:0
+msgid "Please register your bank account before withdrawing."
+msgstr "Vui lòng nhập thông tin ngân hàng trước khi rút tiền."
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__portal_key
+msgid "Portal Key"
+msgstr ""
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__portal_url
+msgid "Portal Url"
+msgstr "Trang cá nhân"
+
+
+#. module: hc_cashback
+#: model:ir.model.constraint,message:hc_cashback.constraint_hc_cashback_member_unique_portal_key
+msgid "Portal key must be unique."
+msgstr "Portal Key không được trùng."
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_order__model_reference
+msgid "Product variant; one order line exists per variant."
+msgstr "Biến thể sản phẩm; mỗi biến thể là một dòng đơn riêng."
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_import_wizard__provider_id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__provider_id
+msgid "Provider"
+msgstr "Nhà cung cấp"
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_direct.py:0
+msgid "Provider %s has no API credentials configured."
+msgstr "Nhà cung cấp %s chưa được cấu hình thông tin API."
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__provider_key
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__provider_key
+msgid "Provider Key"
+msgstr "Mã nhà cung cấp"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_provider__is_default
+msgid "Provider used when generating new tracking links."
+msgstr "Nhà cung cấp dùng khi tạo link theo dõi mới."
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__purchase_datetime
+msgid "Purchase Datetime"
+msgstr "Thời điểm đặt hàng"
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_search
+msgid "Purchase Month"
+msgstr "Tháng đặt hàng"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__raw_payload
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_form
+msgid "Raw Payload"
+msgstr "Dữ liệu gốc"
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_withdrawal_view_form
+msgid "Reject"
+msgstr "Từ chối"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_withdrawal__state__rejected
+msgid "Rejected"
+msgstr "Đã từ chối"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__rejection_reason
+msgid "Rejection Reason"
+msgstr "Lý do từ chối"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_import_wizard__report_file
+msgid "Report File"
+msgstr "Tập tin báo cáo"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_import_wizard__report_filename
+msgid "Report Filename"
+msgstr "Tên tệp báo cáo"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__request_timeout
+msgid "Request Timeout"
+msgstr "Thời gian chờ tối đa"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_withdrawal__state__draft
+msgid "Requested"
+msgstr "Đã yêu cầu"
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid "Save"
+msgstr "Lưu"
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_member__portal_key
+msgid ""
+"Secret in the member's permanent page URL; anyone holding it can see the "
+"balance."
+msgstr "Khóa bí mật nằm trong URL trang cá nhân; ai có nó đều xem được số dư."
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_member_view_form
+msgid "Send Test Message"
+msgstr "Gửi tin nhắn thử"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__sequence
+msgid "Sequence"
+msgstr "Trình tự"
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/controllers/zalo.py:0
+msgid "Set hc_cashback.zalo_app_id before authorising the Zalo account."
+msgstr "Hãy đặt hc_cashback.zalo_app_id trước khi cấp quyền cho tài khoản Zalo."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_manual.py:0
+msgid "Set the link template on provider %s first."
+msgstr "Hãy đặt khuôn link cho nhà cung cấp %s trước."
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_commission_rule__member_share
+msgid "Share of the net commission returned to the member."
+msgstr "Tỷ lệ hoa hồng ròng trả lại cho thành viên."
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid "Shop with cashback"
+msgstr "Mua sắm hoàn tiền"
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_direct.py:0
+msgid "Shopee affiliate API error: %s"
+msgstr "Lỗi từ API Shopee Affiliate: %s"
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_direct.py:0
+msgid "Shopee affiliate API rejected the request (HTTP %s)."
+msgstr "API Shopee Affiliate từ chối yêu cầu (HTTP %s)."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_direct.py:0
+msgid "Shopee affiliate API returned an unreadable response."
+msgstr "API Shopee Affiliate trả về nội dung không đọc được."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_direct.py:0
+msgid "Shopee affiliate API timed out. Please retry in a moment."
+msgstr "API Shopee Affiliate quá thời gian chờ. Bạn thử lại sau ít phút."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_direct.py:0
+msgid "Shopee did not return a tracking link."
+msgstr "Shopee không trả về link theo dõi nào."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_direct.py:0
+msgid "Shopee only accepts letters and digits in a sub id: %s"
+msgstr "Shopee chỉ chấp nhận chữ và số trong sub id: %s"
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_member_view_form
+msgid "Shopping Link"
+msgstr "Link mua sắm"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__shopping_url
+msgid "Shopping Url"
+msgstr "Link mua sắm"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_ledger__amount
+msgid "Signed amount: positive credits the member, negative debits."
+msgstr "Số tiền có dấu: dương là cộng cho thành viên, âm là trừ."
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_member__shopping_url
+msgid "Stable link handed to the member; it redirects to the tracking link."
+msgstr "Link cố định gửi cho thành viên; nó chuyển hướng sang link theo dõi."
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__state
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__state
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_ledger_view_search
+msgid "State"
+msgstr "Trạng thái"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__status
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_search
+msgid "Status"
+msgstr "Trạng thái"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__sync_from_date
+msgid "Sync From Date"
+msgstr "Đồng bộ từ ngày"
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_provider_view_form
+msgid "Sync Now"
+msgstr "Đồng bộ ngay"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__sync_overlap_days
+msgid "Sync Overlap Days"
+msgstr "Số ngày đọc lùi"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__tax_rate
+msgid "Tax Rate"
+msgstr "Thuế suất"
+
+
+#. module: hc_cashback
+#: model:ir.model.constraint,message:hc_cashback.constraint_hc_cashback_commission_rule_check_tax_rate
+msgid "Tax rate must be between 0 and 1."
+msgstr "Thuế suất phải nằm trong khoảng 0 đến 1."
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_form
+msgid "Technical"
+msgstr "Kỹ thuật"
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_member.py:0
+msgid "Test message from your cashback account."
+msgstr "Tin nhắn thử từ tài khoản hoàn tiền của bạn."
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_member.py:0
+msgid "Test message sent."
+msgstr "Đã gửi tin nhắn thử."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_zalo.py:0
+msgid "The Zalo authorisation service returned an unreadable response."
+msgstr "Dịch vụ cấp quyền Zalo trả về nội dung không đọc được."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_zalo.py:0
+msgid "The Zalo authorisation service timed out."
+msgstr "Dịch vụ cấp quyền Zalo quá thời gian chờ."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_manual.py:0
+msgid "The link template must contain the %s placeholder."
+msgstr "Khuôn link phải chứa chỗ đặt %s."
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_member__tracking_url
+msgid "The marketplace link this member's traffic is attributed to."
+msgstr "Link trên sàn mà lưu lượng của thành viên này được ghi nhận về."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_withdrawal.py:0
+msgid "The minimum withdrawal amount is %s."
+msgstr "Số tiền rút tối thiểu là %s."
+
+#. module: hc_cashback
+#: model:ir.model.constraint,message:hc_cashback.constraint_hc_cashback_member_unique_zalo_user_id
+msgid "This Zalo account is already registered."
+msgstr "Tài khoản Zalo này đã được đăng ký."
+
+
+#. module: hc_cashback
+#: model:ir.model.constraint,message:hc_cashback.constraint_hc_cashback_order_unique_external_order_key
+msgid "This affiliate order line has already been imported."
+msgstr "Dòng đơn này đã được nhập trước đó."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_direct.py:0
+msgid "This does not look like a Shopee product link."
+msgstr "Đây không giống link sản phẩm Shopee."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_direct.py:0
+msgid ""
+"This file has no Sub_id columns, so orders cannot be matched to members. "
+"Enable them with the gear icon before exporting."
+msgstr "Tệp này không có cột Sub_id nên không khớp đơn về thành viên được. Hãy bật các cột đó bằng icon bánh răng rồi xuất lại."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_direct.py:0
+msgid ""
+"This file is missing the columns %s. Export the conversion report again with"
+" every column enabled, including Sub_id1 to Sub_id5."
+msgstr "Tệp này thiếu các cột %s. Hãy xuất lại báo cáo chuyển đổi với đầy đủ các cột, bao gồm Sub_id1 đến Sub_id5."
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_expired
+msgid ""
+"This link no longer works. Please ask for your personal cashback page link "
+"again."
+msgstr ""
+"Liên kết này không còn dùng được. Bạn hãy xin lại đường dẫn trang hoàn tiền "
+"cá nhân nhé."
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_manual.py:0
+msgid ""
+"This provider has no API access. Import the conversion report exported from "
+"the Shopee affiliate dashboard instead of syncing."
+msgstr "Nhà cung cấp này không có quyền API. Hãy nhập báo cáo chuyển đổi xuất từ trang Shopee Affiliate thay vì đồng bộ."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/wizard/hc_cashback_import_wizard.py:0
+msgid "This report contains no order line."
+msgstr "Báo cáo này không có dòng đơn nào."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_withdrawal.py:0
+msgid "This withdrawal can no longer be rejected."
+msgstr "Lệnh rút này không thể từ chối được nữa."
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_ledger_view_list
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_member_view_form
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_withdrawal_view_list
+msgid "Total"
+msgstr "Tổng"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__tracking_key
+msgid "Tracking Key"
+msgstr ""
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__tracking_url
+msgid "Tracking Url"
+msgstr ""
+
+
+#. module: hc_cashback
+#: model:ir.model.constraint,message:hc_cashback.constraint_hc_cashback_member_unique_tracking_key
+msgid "Tracking key must be unique."
+msgstr "Tracking Key không được trùng."
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_ledger_view_search
+msgid "Type"
+msgstr "Loại"
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_search
+msgid "Unmatched"
+msgstr "Chưa khớp thành viên"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_ledger__state__validated
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_order__status__validated
+msgid "Validated"
+msgstr "Đã xác nhận"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_order__click_datetime
+msgid "When the member clicked, used when attribution is disputed."
+msgstr "Thời điểm thành viên click, dùng khi cần đối chiếu quy kết đơn."
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid "Withdraw"
+msgstr "Rút tiền"
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__withdrawal_id
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_ledger__entry_type__withdrawal
+msgid "Withdrawal"
+msgstr "Rút tiền"
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_withdrawal.py:0
+msgid "Withdrawal %s rejected."
+msgstr "Đã từ chối lệnh rút %s."
+
+
+#. module: hc_cashback
+#: model:ir.actions.act_window,name:hc_cashback.hc_cashback_withdrawal_action
+#: model:ir.ui.menu,name:hc_cashback.menu_cashback_withdrawal
+msgid "Withdrawals"
+msgstr "Lệnh rút tiền"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_commission_rule__tax_rate
+msgid "Withholding tax deducted from the gross commission before splitting."
+msgstr "Thuế khấu trừ tại nguồn, trừ khỏi hoa hồng gộp trước khi chia."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_withdrawal.py:0
+msgid "You already have a withdrawal being processed."
+msgstr "Bạn đang có một lệnh rút đang được xử lý."
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_withdrawal.py:0
+msgid "You can withdraw at most %s right now."
+msgstr "Hiện bạn chỉ rút được tối đa %s."
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/controllers/portal_h5.py:0
+msgid "Your bank details have been saved."
+msgstr "Đã lưu thông tin ngân hàng."
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/controllers/zalo.py:0
+msgid ""
+"Your cashback shopping link:\n"
+"%s\n"
+"\n"
+"Open it first, then buy as usual in the same session. Save it to your home screen so you never forget."
+msgstr ""
+"Link mua sắm hoàn tiền của bạn:\n"
+"%s\n"
+"\n"
+"Mở link này trước rồi mua như bình thường trong cùng phiên. Lưu vào màn hình chính để khỏi quên."
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/controllers/portal_h5.py:0
+msgid "Your withdrawal request has been submitted."
+msgstr "Đã gửi yêu cầu rút tiền."
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_member.py:0
+msgid "Zalo %s"
+msgstr "Zalo %s"
+
+
+#. module: hc_cashback
+#: model:ir.model,name:hc_cashback.model_hc_cashback_zalo
+msgid "Zalo Official Account API"
+msgstr "Zalo Official Account API"
+
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__zalo_user_id
+msgid "Zalo User"
+msgstr "Zalo User ID"
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/controllers/zalo.py:0
+msgid "Zalo account authorised. The bot can now send messages."
+msgstr "Đã cấp quyền cho tài khoản Zalo. Bot có thể gửi tin nhắn."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_zalo.py:0
+msgid "Zalo application credentials are not configured."
+msgstr "Chưa cấu hình thông tin ứng dụng Zalo."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_member.py:0
+msgid ""
+"Zalo did not accept the message. Check the server log for the reason: the "
+"access token may be missing, or this member may not have written to the "
+"Official Account within the last 48 hours."
+msgstr "Zalo không nhận tin nhắn. Xem log máy chủ để biết lý do: có thể thiếu access token, hoặc thành viên này chưa nhắn cho Official Account trong 48 giờ qua."
+
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_zalo.py:0
+msgid "Zalo refused the authorisation: %s"
+msgstr "Zalo từ chối cấp quyền: %s"
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_commission_rule_view_form
+msgid "e.g. Default 90/10"
+msgstr "ví dụ Mặc định 90/10"
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_provider_view_form
+msgid "e.g. Shopee Affiliate"
+msgstr "ví dụ Shopee Affiliate"
+
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_provider_view_form
+msgid "https://shopee.vn/?mmp_pid=an_1&utm_content={sub_ids}"
+msgstr "https://shopee.vn/?mmp_pid=an_1&utm_content={sub_ids}"

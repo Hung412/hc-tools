@@ -1,4 +1,6 @@
+import csv
 import hashlib
+import io
 import json
 import logging
 import re
@@ -185,6 +187,57 @@ class ShopeeDirectProvider(AffiliateProvider):
             variables['scrollId'] = page_info.get('scrollId')
         return conversions
 
+    def parse_report(self, content):
+        """Read the conversion report exported from the affiliate dashboard."""
+        try:
+            text = content.decode('utf-8-sig')
+        except UnicodeDecodeError:
+            text = content.decode('latin-1')
+        reader = csv.DictReader(io.StringIO(text))
+        resolved = self._resolve_report_columns(reader.fieldnames or [])
+        conversions = []
+        for row in reader:
+            order_reference = (row.get(resolved['order_reference']) or '').strip()
+            if not order_reference:
+                continue
+            raw_status = (row.get(resolved['status']) or '').strip().lower()
+            status = REPORT_STATUS_MAP.get(raw_status)
+            if status is None:
+                status = STATUS_PENDING
+                _logger.warning("Unknown affiliate item status %r, treated as pending", raw_status)
+            conversions.append(Conversion(
+                order_reference=order_reference,
+                item_reference=(row.get(resolved['item_reference']) or '').strip(),
+                model_reference=(row.get(resolved['model_reference']) or '').strip(),
+                commission_gross=_report_float(row.get(resolved['commission_gross'])),
+                status=status,
+                sub_ids=[(row.get(column) or '').strip() for column in REPORT_SUB_ID_COLUMNS],
+                order_amount=_report_float(row.get(resolved['order_amount'])),
+                purchase_datetime=_report_datetime(row.get(resolved['purchase_datetime'])),
+                click_datetime=_report_datetime(row.get(resolved['click_datetime'])),
+                raw=dict(row),
+            ))
+        return conversions
+
+    def _resolve_report_columns(self, fieldnames):
+        headers = {name.strip(): name for name in fieldnames if name}
+        resolved, missing = {}, []
+        for key, candidates in REPORT_COLUMNS.items():
+            match = next((headers[c] for c in candidates if c in headers), None)
+            if match is None:
+                missing.append(candidates[0])
+            resolved[key] = match
+        if missing:
+            raise UserError(_(
+                "This file is missing the columns %s. Export the conversion report again "
+                "with every column enabled, including Sub_id1 to Sub_id5.",
+                ', '.join(missing)))
+        if not any(column in headers for column in REPORT_SUB_ID_COLUMNS):
+            raise UserError(_(
+                "This file has no Sub_id columns, so orders cannot be matched to members. "
+                "Enable them with the gear icon before exporting."))
+        return resolved
+
     def _parse_nodes(self, nodes):
         conversions = []
         for node in nodes:
@@ -205,3 +258,48 @@ class ShopeeDirectProvider(AffiliateProvider):
                         raw={'node': node, 'order': order, 'item': item},
                     ))
         return conversions
+
+
+REPORT_COLUMNS = {
+    'order_reference': ('ID đơn hàng', 'Order ID'),
+    'item_reference': ('Item id', 'Item ID'),
+    'model_reference': ('ID Model', 'Model ID'),
+    'purchase_datetime': ('Thời Gian Đặt Hàng', 'Order Time'),
+    'click_datetime': ('Thời gian Click', 'Click Time'),
+    'order_amount': ('Giá trị đơn hàng (₫)', 'Order Amount'),
+    'commission_gross': ('Hoa hồng ròng tiếp thị liên kết(₫)', 'Affiliate Net Commission'),
+    'status': ('Trạng thái sản phẩm liên kết', 'Affiliate Item Status'),
+}
+REPORT_SUB_ID_COLUMNS = ('Sub_id1', 'Sub_id2', 'Sub_id3', 'Sub_id4', 'Sub_id5')
+
+REPORT_STATUS_MAP = {
+    'đang chờ xử lý': STATUS_PENDING,
+    'pending': STATUS_PENDING,
+    'hoàn thành': STATUS_VALIDATED,
+    'đã hoàn thành': STATUS_VALIDATED,
+    'completed': STATUS_VALIDATED,
+    'đã hủy': STATUS_CANCELLED,
+    'hủy': STATUS_CANCELLED,
+    'cancelled': STATUS_CANCELLED,
+    'canceled': STATUS_CANCELLED,
+    'không hợp lệ': STATUS_CANCELLED,
+    'invalid': STATUS_CANCELLED,
+}
+
+
+def _report_float(raw):
+    text = (raw or '').strip().replace(',', '')
+    try:
+        return float(text)
+    except ValueError:
+        return 0.0
+
+
+def _report_datetime(raw):
+    text = (raw or '').strip()
+    for pattern in ('%Y-%m-%d %H:%M:%S', '%Y-%m-%d %H:%M', '%d-%m-%Y %H:%M:%S'):
+        try:
+            return datetime.strptime(text, pattern)
+        except ValueError:
+            continue
+    return None

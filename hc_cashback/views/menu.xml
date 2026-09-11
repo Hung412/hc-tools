@@ -16,6 +16,9 @@
     <menuitem id="menu_cashback_withdrawal" name="Withdrawals" parent="menu_cashback_root"
               action="hc_cashback_withdrawal_action" sequence="40"/>
 
+    <menuitem id="menu_cashback_import" name="Import Report" parent="menu_cashback_root"
+              action="hc_cashback_import_wizard_action" sequence="15"/>
+
     <menuitem id="menu_cashback_configuration" name="Configuration" parent="menu_cashback_root"
               sequence="90" groups="hc_cashback.group_cashback_manager"/>
 

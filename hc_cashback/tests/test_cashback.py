@@ -57,7 +57,7 @@ class TestCashback(TransactionCase):
             'commission_gross': 50000.0,
         })
         self.assertEqual(order.provider_key, 'shopee_direct')
-        self.assertEqual(order.external_order_key, 'shopee_direct|MANUAL-1|')
+        self.assertEqual(order.external_order_key, 'shopee_direct|MANUAL-1||')
         self.assertTrue(order.commission_rule_id)
         self.assertRecordValues(order, [{
             'commission_net': 45000.0, 'member_amount': 40500.0, 'platform_amount': 4500.0}])
@@ -74,7 +74,7 @@ class TestCashback(TransactionCase):
         form.order_reference = 'FORM-1'
         form.commission_gross = 50000.0
         self.assertEqual(form.provider_key, 'shopee_direct')
-        self.assertEqual(form.external_order_key, 'shopee_direct|FORM-1|')
+        self.assertEqual(form.external_order_key, 'shopee_direct|FORM-1||')
         self.assertTrue(form.commission_rule_id)
         order = form.save()
         self.assertEqual(order.member_amount, 40500.0)
@@ -270,3 +270,50 @@ class TestShopeeLinkFormat(TransactionCase):
             'https://shopee.vn/-CHINH-HANG-Khau-Trang-5D-i.13213141.23119593211?xptdk=abc')
         self.assertEqual((shop, item), ('13213141', '23119593211'))
         self.assertEqual(clean, 'https://shopee.vn/product/13213141/23119593211')
+
+
+class TestPermanentPortal(TransactionCase):
+    """The member page is reachable for good, without a chat bot issuing tokens."""
+
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.env['ir.config_parameter'].sudo().set_param('web.base.url', 'https://cashback.example')
+        cls.member = cls.env['hc.cashback.member'].create({
+            'partner_id': cls.env['res.partner'].create({'name': 'Portal User'}).id,
+            'zalo_user_id': 'zalo-portal',
+        })
+
+    def test_every_member_gets_its_own_keys(self):
+        other = self.env['hc.cashback.member'].create({
+            'partner_id': self.env['res.partner'].create({'name': 'Second'}).id,
+            'zalo_user_id': 'zalo-portal-2',
+        })
+        self.assertTrue(self.member.portal_key)
+        self.assertNotEqual(self.member.portal_key, other.portal_key)
+        self.assertNotEqual(self.member.portal_key, self.member.tracking_key)
+
+    def test_portal_url_is_permanent_and_resolvable(self):
+        Member = self.env['hc.cashback.member']
+        self.assertEqual(
+            self.member.portal_url,
+            'https://cashback.example/hc_cashback/me/%s' % self.member.portal_key)
+        self.assertEqual(Member.resolve_portal_key(self.member.portal_key), self.member)
+        self.assertFalse(Member.resolve_portal_key('nope'))
+        self.assertFalse(Member.resolve_portal_key(False))
+
+    def test_page_renders_with_a_working_shopping_button(self):
+        provider = self.env.ref('hc_cashback.provider_shopee_direct')
+        provider.write({'key': 'shopee_manual', 'link_template': TEMPLATE, 'is_default': True})
+        self.member.invalidate_recordset()
+        html = str(self.env['ir.qweb']._render('hc_cashback.h5_home', {
+            'member': self.member,
+            'token': self.member.build_h5_token(),
+            'portal_key': self.member.portal_key,
+            'message': None,
+            'orders': self.env['hc.cashback.order'],
+            'withdrawals': self.env['hc.cashback.withdrawal'],
+        }))
+        self.assertIn('/hc_cashback/go/%s' % self.member.tracking_key, html)
+        self.assertIn(self.member.portal_key, html)
+        self.assertNotIn('/web/assets', html)

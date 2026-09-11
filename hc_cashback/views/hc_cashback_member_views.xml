@@ -23,6 +23,10 @@
         <field name="model">hc.cashback.member</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="action_send_test_message" type="object"
+                            string="Send Test Message" groups="hc_cashback.group_cashback_manager"/>
+                </header>
                 <sheet>
                     <widget name="web_ribbon" title="Blocked" bg_color="text-bg-danger" invisible="not is_blocked"/>
                     <div class="oe_title">
@@ -45,6 +49,8 @@
                     <group string="Shopping Link">
                         <group>
                             <field name="tracking_key"/>
+                            <field name="portal_key" groups="hc_cashback.group_cashback_manager"/>
+                            <field name="portal_url" widget="CopyClipboardChar"/>
                             <field name="shopping_url" widget="CopyClipboardChar"/>
                             <field name="tracking_url"/>
                         </group>

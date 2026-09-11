@@ -24,6 +24,8 @@ class HcCashbackOrder(models.Model):
     external_order_key = fields.Char(required=True, index=True, copy=False, readonly=True)
     order_reference = fields.Char(required=True, index=True)
     item_reference = fields.Char()
+    model_reference = fields.Char(help="Product variant; one order line exists per variant.")
+    click_datetime = fields.Datetime(help="When the member clicked, used when attribution is disputed.")
     member_id = fields.Many2one('hc.cashback.member', index=True, ondelete='restrict')
     commission_rule_id = fields.Many2one(
         'hc.cashback.commission.rule', required=True, ondelete='restrict',
@@ -56,7 +58,7 @@ class HcCashbackOrder(models.Model):
             r.commission_net, r.member_amount, r.platform_amount = (
                 r.commission_rule_id.split(r.commission_gross) if r.commission_rule_id else (0.0, 0.0, 0.0))
 
-    @api.onchange('provider_id', 'order_reference', 'item_reference')
+    @api.onchange('provider_id', 'order_reference', 'item_reference', 'model_reference')
     def _onchange_technical_keys(self):
         """Fill the derived keys in the form; the client checks required before saving."""
         for r in self:
@@ -64,11 +66,12 @@ class HcCashbackOrder(models.Model):
                 continue
             r.provider_key = r.provider_id.key
             r.external_order_key = self._build_external_key(
-                r.provider_id.key, r.order_reference, r.item_reference)
+                r.provider_id.key, r.order_reference, r.item_reference, r.model_reference)
 
     @api.model
-    def _build_external_key(self, provider_key, order_reference, item_reference):
-        return '%s|%s|%s' % (provider_key or '', order_reference or '', item_reference or '')
+    def _build_external_key(self, provider_key, order_reference, item_reference, model_reference=None):
+        return '%s|%s|%s|%s' % (
+            provider_key or '', order_reference or '', item_reference or '', model_reference or '')
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -78,7 +81,8 @@ class HcCashbackOrder(models.Model):
                 vals['provider_key'] = self.env['hc.cashback.provider'].browse(vals['provider_id']).key
             if not vals.get('external_order_key'):
                 vals['external_order_key'] = self._build_external_key(
-                    vals.get('provider_key'), vals.get('order_reference'), vals.get('item_reference'))
+                    vals.get('provider_key'), vals.get('order_reference'),
+                    vals.get('item_reference'), vals.get('model_reference'))
             if not vals.get('commission_rule_id'):
                 purchased = vals.get('purchase_datetime')
                 date = fields.Datetime.to_datetime(purchased).date() if purchased else None
@@ -93,7 +97,8 @@ class HcCashbackOrder(models.Model):
         if not conversions:
             return self.browse()
 
-        keys = ['%s|%s|%s' % (provider.key, c.order_reference, c.item_reference) for c in conversions]
+        keys = [self._build_external_key(provider.key, c.order_reference, c.item_reference, c.model_reference)
+                for c in conversions]
         by_key = {order.external_order_key: order for order in self.search([('external_order_key', 'in', keys)])}
         member_by_key = self._members_by_tracking_key(conversions)
         rule_model = self.env['hc.cashback.commission.rule']
@@ -116,6 +121,8 @@ class HcCashbackOrder(models.Model):
                 'external_order_key': key,
                 'order_reference': conversion.order_reference,
                 'item_reference': conversion.item_reference,
+                'model_reference': conversion.model_reference,
+                'click_datetime': conversion.click_datetime,
                 'member_id': member.id if member else False,
                 'commission_rule_id': rule.id,
                 'order_amount': conversion.order_amount,
@@ -184,6 +191,17 @@ class HcCashbackOrder(models.Model):
                 'note': _('Commission corrected on %s.', order.order_reference),
             })
         return self.env['hc.cashback.ledger'].create(vals_list)
+
+    def action_mark_settled(self):
+        """Release validated commission once the marketplace has actually paid.
+
+        The conversion report never says the money arrived; that only shows on the
+        payment statement, so settling stays a deliberate act by an operator.
+        """
+        settled = self.filtered(lambda order: order.status == 'validated')
+        for order in settled:
+            order._apply_status('payable')
+        return len(settled)
 
     def _apply_status(self, status):
         self.ensure_one()

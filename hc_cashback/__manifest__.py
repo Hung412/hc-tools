@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': "HC Cashback",
-    'version': '18.0.2.1.0',
+    'version': '18.0.4.2.0',
     'author': "TuanHung",
     'summary': "Share affiliate commission back to buyers through a Zalo bot",
     'description': """
@@ -31,6 +31,7 @@
         'views/hc_cashback_ledger_views.xml',
         'views/hc_cashback_withdrawal_views.xml',
         'views/hc_cashback_h5_templates.xml',
+        'wizard/hc_cashback_import_wizard_views.xml',
         'views/menu.xml',
     ],
     'license': 'OPL-1',

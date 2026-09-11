@@ -1,0 +1,1392 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hc_cashback
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-11 02:41+0000\n"
+"PO-Revision-Date: 2026-09-11 02:41+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_withdrawal.py:0
+msgid "%s no longer has enough available balance."
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid "<b>Bank account</b>"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid "<b>Recent orders</b>"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid "<b>Withdrawals</b>"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_provider__link_template
+msgid ""
+"A link produced by the marketplace with its sub id placeholder written as "
+"{sub_ids}, e.g. https://shopee.vn/?mmp_pid=an_1&utm_content={sub_ids}"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid "Account holder"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid "Account number"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__message_needaction
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__active
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__active
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__active
+msgid "Active"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.actions.act_window,name:hc_cashback.hc_cashback_order_action
+#: model:ir.ui.menu,name:hc_cashback.menu_cashback_order
+msgid "Affiliate Orders"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.actions.act_window,name:hc_cashback.hc_cashback_provider_action
+#: model:ir.ui.menu,name:hc_cashback.menu_cashback_provider
+msgid "Affiliate Providers"
+msgstr ""
+
+#. module: hc_cashback
+#: model:res.groups,name:hc_cashback.group_cashback_user
+msgid "Agent"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_member__tracking_key
+msgid "Alphanumeric sub id carried by this member's shopping link."
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__amount
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__amount
+msgid "Amount"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__app_id
+msgid "App"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__app_secret
+msgid "App Secret"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_withdrawal_view_form
+msgid "Approve"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_withdrawal__state__approved
+msgid "Approved"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_commission_rule_view_form
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_provider_view_form
+msgid "Archived"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__message_attachment_count
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/controllers/zalo.py:0
+msgid "Authorisation rejected: unexpected callback state."
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_member_view_list
+msgid "Available"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid "Available to withdraw"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__balance_available
+msgid "Balance Available"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__balance_pending
+msgid "Balance Pending"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid "Bank"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_member_view_form
+msgid "Bank Account"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__bank_account_name
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__bank_account_name
+msgid "Bank Account Name"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__bank_account_number
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__bank_account_number
+msgid "Bank Account Number"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__bank_name
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__bank_name
+msgid "Bank Name"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_member_view_form
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_member_view_search
+msgid "Blocked"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_member__is_blocked
+msgid "Blocked members can no longer shop or withdraw."
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_import_wizard_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_ledger__state__cancelled
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_order__status__cancelled
+msgid "Cancelled"
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_direct.py:0
+msgid "Cannot open this shortened link. Please paste the full product link."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_direct.py:0
+msgid "Cannot reach the Shopee affiliate API."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_zalo.py:0
+msgid "Cannot reach the Zalo authorisation service."
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.module.category,name:hc_cashback.module_category_cashback
+#: model:ir.ui.menu,name:hc_cashback.menu_cashback_root
+msgid "Cashback"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model,name:hc_cashback.model_hc_cashback_order
+msgid "Cashback Affiliate Order"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model,name:hc_cashback.model_hc_cashback_provider
+msgid "Cashback Affiliate Provider"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model,name:hc_cashback.model_hc_cashback_commission_rule
+msgid "Cashback Commission Rule"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model,name:hc_cashback.model_hc_cashback_ledger
+msgid "Cashback Ledger Entry"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model,name:hc_cashback.model_hc_cashback_member
+msgid "Cashback Member"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model,name:hc_cashback.model_hc_cashback_withdrawal
+msgid "Cashback Withdrawal Request"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.actions.server,name:hc_cashback.cron_refresh_zalo_token_ir_actions_server
+msgid "Cashback: refresh Zalo access token"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.actions.server,name:hc_cashback.cron_sync_conversions_ir_actions_server
+msgid "Cashback: sync affiliate conversions"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__click_count
+msgid "Click Count"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__click_datetime
+msgid "Click Datetime"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_ledger__entry_type__earn
+msgid "Commission Earned"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__commission_gross
+msgid "Commission Gross"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__commission_net
+msgid "Commission Net"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_ledger__entry_type__reversal
+msgid "Commission Reversed"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__commission_rule_id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__commission_rule_id
+msgid "Commission Rule"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.actions.act_window,name:hc_cashback.hc_cashback_commission_rule_action
+#: model:ir.ui.menu,name:hc_cashback.menu_cashback_commission_rule
+msgid "Commission Rules"
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_order.py:0
+msgid "Commission corrected on %s."
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.ui.menu,name:hc_cashback.menu_cashback_configuration
+msgid "Configuration"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_provider__sync_from_date
+msgid "Conversions are never fetched before this date."
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__create_uid
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_import_wizard__create_uid
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__create_uid
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__create_uid
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__create_uid
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__create_uid
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__create_date
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_import_wizard__create_date
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__create_date
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__create_date
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__create_date
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__create_date
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__currency_id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__currency_id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__currency_id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__date
+msgid "Date"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__date_from
+msgid "Date From"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__date_to
+msgid "Date To"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__display_name
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_import_wizard__display_name
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__display_name
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__display_name
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__display_name
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__display_name
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_commission_rule.py:0
+msgid "End date must be after start date."
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__endpoint_url
+msgid "Endpoint Url"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__entry_type
+msgid "Entry Type"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_import_wizard_view_form
+msgid ""
+"Export the conversion report from the affiliate dashboard with every\n"
+"                    column enabled, including Sub_id1 to Sub_id5. Importing the same file\n"
+"                    twice is safe: existing order lines are updated, never duplicated."
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__external_order_key
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__external_order_key
+msgid "External Order Key"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__message_follower_ids
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__message_partner_ids
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_order__provider_key
+msgid "Frozen at creation so history survives a provider switch."
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_list
+msgid "Gross"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_ledger_view_search
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_search
+msgid "Group By"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_member_view_search
+msgid "Has Available Balance"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__has_message
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_provider__sync_overlap_days
+msgid "How far back each run re-reads, so late status changes are picked up."
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_import_wizard__id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__id
+msgid "ID"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_member__message_needaction
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_withdrawal__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_member__message_has_error
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_withdrawal__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_import_wizard_view_form
+msgid "Import"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model,name:hc_cashback.model_hc_cashback_import_wizard
+msgid "Import Affiliate Conversion Report"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.actions.act_window,name:hc_cashback.hc_cashback_import_wizard_action
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_import_wizard_view_form
+msgid "Import Conversion Report"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.ui.menu,name:hc_cashback.menu_cashback_import
+msgid "Import Report"
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/wizard/hc_cashback_import_wizard.py:0
+msgid "Imported Orders"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__is_blocked
+msgid "Is Blocked"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__is_default
+msgid "Is Default"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__message_is_follower
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__item_reference
+msgid "Item Reference"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__key
+msgid "Key"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__last_click_datetime
+msgid "Last Click Datetime"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__last_sync_date
+msgid "Last Sync Date"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__write_uid
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_import_wizard__write_uid
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__write_uid
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__write_uid
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__write_uid
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__write_uid
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__write_date
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_import_wizard__write_date
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__write_date
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__write_date
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__write_date
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__write_date
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.actions.act_window,name:hc_cashback.hc_cashback_ledger_action
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__ledger_ids
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__ledger_ids
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__ledger_ids
+#: model:ir.ui.menu,name:hc_cashback.menu_cashback_ledger
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_member_view_form
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_form
+msgid "Ledger"
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_ledger.py:0
+msgid "Ledger entries are immutable. Post an adjustment entry instead."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_ledger.py:0
+msgid "Ledger entries cannot be deleted. Post an adjustment entry instead."
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__link_template
+msgid "Link Template"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_expired
+msgid "Link not valid"
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/controllers/zalo.py:0
+msgid ""
+"MUA - get your cashback shopping link\n"
+"SODU - check your balance\n"
+"LICHSU - order history\n"
+"RUT - withdraw"
+msgstr ""
+
+#. module: hc_cashback
+#: model:res.groups,name:hc_cashback.group_cashback_manager
+msgid "Manager"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_ledger__entry_type__adjustment
+msgid "Manual Adjustment"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_withdrawal_view_form
+msgid "Mark Paid"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_form
+msgid "Mark Settled"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__member_id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__member_id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__member_id
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_ledger_view_search
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_list
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_search
+msgid "Member"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__member_amount
+msgid "Member Amount"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__member_share
+msgid "Member Share"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.constraint,message:hc_cashback.constraint_hc_cashback_commission_rule_check_member_share
+msgid "Member share must be between 0 and 1."
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.actions.act_window,name:hc_cashback.hc_cashback_member_action
+#: model:ir.ui.menu,name:hc_cashback.menu_cashback_member
+msgid "Members"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__message_has_error
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__message_ids
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__model_reference
+msgid "Model Reference"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_form
+msgid "Money"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid "My cashback"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__name
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__name
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__name
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__name
+msgid "Name"
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_withdrawal.py:0
+msgid "New"
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_zalo.py:0
+msgid "No Zalo refresh token stored. Run the Zalo authorisation once."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_provider.py:0
+msgid "No affiliate provider is configured."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_commission_rule.py:0
+msgid "No cashback commission rule is active on %s."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_provider.py:0
+msgid "No implementation is registered for provider %s."
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid ""
+"No order has been tracked yet. Orders usually appear a few hours after "
+"purchase."
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_ledger_view_search
+msgid "Not Settled"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__note
+msgid "Note"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__message_needaction_counter
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__message_has_error_counter
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_member__message_needaction_counter
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_withdrawal__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_member__message_has_error_counter
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_withdrawal__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.constraint,message:hc_cashback.constraint_hc_cashback_provider_unique_key
+msgid "One configuration per affiliate provider."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_withdrawal.py:0
+msgid "Only a requested withdrawal can be approved."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_withdrawal.py:0
+msgid "Only an approved withdrawal can be marked as paid."
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid ""
+"Open this first, then buy as usual in the same session. Add this page to your\n"
+"                    home screen so it is always one tap away."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/controllers/zalo.py:0
+msgid ""
+"Open your cashback page (valid 15 minutes):\n"
+"%s/hc_cashback/h5/home?t=%s"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__order_id
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_form
+msgid "Order"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__order_amount
+msgid "Order Amount"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__order_reference
+msgid "Order Reference"
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_order.py:0
+msgid "Order cancelled or returned after settlement."
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_withdrawal__state__paid
+msgid "Paid"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__partner_id
+msgid "Partner"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_ledger__state__payable
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_order__status__payable
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_ledger_view_search
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_search
+msgid "Payable"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__payment_reference
+msgid "Payment Reference"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_ledger__state__pending
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_order__status__pending
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_member_view_list
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_search
+msgid "Pending"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid "Pending:"
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/controllers/zalo.py:0
+msgid ""
+"Pending: %(pending)s\n"
+"Available: %(available)s"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_member__portal_url
+msgid "Permanent page handed to the member once."
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__phone
+msgid "Phone"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_list
+msgid "Platform"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__platform_amount
+msgid "Platform Amount"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__platform_share
+msgid "Platform Share"
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_withdrawal.py:0
+msgid "Please register your bank account before withdrawing."
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__portal_key
+msgid "Portal Key"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__portal_url
+msgid "Portal Url"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.constraint,message:hc_cashback.constraint_hc_cashback_member_unique_portal_key
+msgid "Portal key must be unique."
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_order__model_reference
+msgid "Product variant; one order line exists per variant."
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_import_wizard__provider_id
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__provider_id
+msgid "Provider"
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_direct.py:0
+msgid "Provider %s has no API credentials configured."
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__provider_key
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__provider_key
+msgid "Provider Key"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_provider__is_default
+msgid "Provider used when generating new tracking links."
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__purchase_datetime
+msgid "Purchase Datetime"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_search
+msgid "Purchase Month"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__raw_payload
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_form
+msgid "Raw Payload"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_withdrawal_view_form
+msgid "Reject"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_withdrawal__state__rejected
+msgid "Rejected"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__rejection_reason
+msgid "Rejection Reason"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_import_wizard__report_file
+msgid "Report File"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_import_wizard__report_filename
+msgid "Report Filename"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__request_timeout
+msgid "Request Timeout"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_withdrawal__state__draft
+msgid "Requested"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid "Save"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_member__portal_key
+msgid ""
+"Secret in the member's permanent page URL; anyone holding it can see the "
+"balance."
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_member_view_form
+msgid "Send Test Message"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/controllers/zalo.py:0
+msgid "Set hc_cashback.zalo_app_id before authorising the Zalo account."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_manual.py:0
+msgid "Set the link template on provider %s first."
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_commission_rule__member_share
+msgid "Share of the net commission returned to the member."
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid "Shop with cashback"
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_direct.py:0
+msgid "Shopee affiliate API error: %s"
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_direct.py:0
+msgid "Shopee affiliate API rejected the request (HTTP %s)."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_direct.py:0
+msgid "Shopee affiliate API returned an unreadable response."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_direct.py:0
+msgid "Shopee affiliate API timed out. Please retry in a moment."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_direct.py:0
+msgid "Shopee did not return a tracking link."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_direct.py:0
+msgid "Shopee only accepts letters and digits in a sub id: %s"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_member_view_form
+msgid "Shopping Link"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__shopping_url
+msgid "Shopping Url"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_ledger__amount
+msgid "Signed amount: positive credits the member, negative debits."
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_member__shopping_url
+msgid "Stable link handed to the member; it redirects to the tracking link."
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__state
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_withdrawal__state
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_ledger_view_search
+msgid "State"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_order__status
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_search
+msgid "Status"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__sync_from_date
+msgid "Sync From Date"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_provider_view_form
+msgid "Sync Now"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_provider__sync_overlap_days
+msgid "Sync Overlap Days"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_commission_rule__tax_rate
+msgid "Tax Rate"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.constraint,message:hc_cashback.constraint_hc_cashback_commission_rule_check_tax_rate
+msgid "Tax rate must be between 0 and 1."
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_form
+msgid "Technical"
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_member.py:0
+msgid "Test message from your cashback account."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_member.py:0
+msgid "Test message sent."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_zalo.py:0
+msgid "The Zalo authorisation service returned an unreadable response."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_zalo.py:0
+msgid "The Zalo authorisation service timed out."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_manual.py:0
+msgid "The link template must contain the %s placeholder."
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_member__tracking_url
+msgid "The marketplace link this member's traffic is attributed to."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_withdrawal.py:0
+msgid "The minimum withdrawal amount is %s."
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.constraint,message:hc_cashback.constraint_hc_cashback_member_unique_zalo_user_id
+msgid "This Zalo account is already registered."
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.constraint,message:hc_cashback.constraint_hc_cashback_order_unique_external_order_key
+msgid "This affiliate order line has already been imported."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_direct.py:0
+msgid "This does not look like a Shopee product link."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_direct.py:0
+msgid ""
+"This file has no Sub_id columns, so orders cannot be matched to members. "
+"Enable them with the gear icon before exporting."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_direct.py:0
+msgid ""
+"This file is missing the columns %s. Export the conversion report again with"
+" every column enabled, including Sub_id1 to Sub_id5."
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_expired
+msgid ""
+"This link no longer works. Please ask for your personal cashback page link "
+"again."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/providers/shopee_manual.py:0
+msgid ""
+"This provider has no API access. Import the conversion report exported from "
+"the Shopee affiliate dashboard instead of syncing."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/wizard/hc_cashback_import_wizard.py:0
+msgid "This report contains no order line."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_withdrawal.py:0
+msgid "This withdrawal can no longer be rejected."
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_ledger_view_list
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_member_view_form
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_withdrawal_view_list
+msgid "Total"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__tracking_key
+msgid "Tracking Key"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__tracking_url
+msgid "Tracking Url"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.constraint,message:hc_cashback.constraint_hc_cashback_member_unique_tracking_key
+msgid "Tracking key must be unique."
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_ledger_view_search
+msgid "Type"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_order_view_search
+msgid "Unmatched"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_ledger__state__validated
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_order__status__validated
+msgid "Validated"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_order__click_datetime
+msgid "When the member clicked, used when attribution is disputed."
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.h5_home
+msgid "Withdraw"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_ledger__withdrawal_id
+#: model:ir.model.fields.selection,name:hc_cashback.selection__hc_cashback_ledger__entry_type__withdrawal
+msgid "Withdrawal"
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_withdrawal.py:0
+msgid "Withdrawal %s rejected."
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.actions.act_window,name:hc_cashback.hc_cashback_withdrawal_action
+#: model:ir.ui.menu,name:hc_cashback.menu_cashback_withdrawal
+msgid "Withdrawals"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,help:hc_cashback.field_hc_cashback_commission_rule__tax_rate
+msgid "Withholding tax deducted from the gross commission before splitting."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_withdrawal.py:0
+msgid "You already have a withdrawal being processed."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_withdrawal.py:0
+msgid "You can withdraw at most %s right now."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/controllers/portal_h5.py:0
+msgid "Your bank details have been saved."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/controllers/zalo.py:0
+msgid ""
+"Your cashback shopping link:\n"
+"%s\n"
+"\n"
+"Open it first, then buy as usual in the same session. Save it to your home screen so you never forget."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/controllers/portal_h5.py:0
+msgid "Your withdrawal request has been submitted."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_member.py:0
+msgid "Zalo %s"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model,name:hc_cashback.model_hc_cashback_zalo
+msgid "Zalo Official Account API"
+msgstr ""
+
+#. module: hc_cashback
+#: model:ir.model.fields,field_description:hc_cashback.field_hc_cashback_member__zalo_user_id
+msgid "Zalo User"
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/controllers/zalo.py:0
+msgid "Zalo account authorised. The bot can now send messages."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_zalo.py:0
+msgid "Zalo application credentials are not configured."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_member.py:0
+msgid ""
+"Zalo did not accept the message. Check the server log for the reason: the "
+"access token may be missing, or this member may not have written to the "
+"Official Account within the last 48 hours."
+msgstr ""
+
+#. module: hc_cashback
+#. odoo-python
+#: code:addons/hc_cashback/models/hc_cashback_zalo.py:0
+msgid "Zalo refused the authorisation: %s"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_commission_rule_view_form
+msgid "e.g. Default 90/10"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_provider_view_form
+msgid "e.g. Shopee Affiliate"
+msgstr ""
+
+#. module: hc_cashback
+#: model_terms:ir.ui.view,arch_db:hc_cashback.hc_cashback_provider_view_form
+msgid "https://shopee.vn/?mmp_pid=an_1&utm_content={sub_ids}"
+msgstr ""

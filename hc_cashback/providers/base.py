@@ -34,6 +34,8 @@ class Conversion:
     commission_gross: float
     status: str
     sub_ids: list = field(default_factory=list)
+    model_reference: str = ''
+    click_datetime: object = None
     order_amount: float = 0.0
     currency: str = 'VND'
     purchase_datetime: object = None
@@ -69,4 +71,8 @@ class AffiliateProvider:
 
     def fetch_conversions(self, date_from, date_to):
         """Return a list of `Conversion` for the given purchase window."""
+        raise NotImplementedError
+
+    def parse_report(self, content):
+        """Return a list of `Conversion` read from an exported report file."""
         raise NotImplementedError

@@ -11,10 +11,12 @@ access_hc_cashback_member_manager,access.hc.cashback.member.manager,model_hc_cas
 
 
 access_hc_cashback_order_user,access.hc.cashback.order.user,model_hc_cashback_order,hc_cashback.group_cashback_user,1,0,0,0
-access_hc_cashback_order_manager,access.hc.cashback.order.manager,model_hc_cashback_order,hc_cashback.group_cashback_manager,1,1,1,0
+access_hc_cashback_order_manager,access.hc.cashback.order.manager,model_hc_cashback_order,hc_cashback.group_cashback_manager,1,1,1,1
 
 access_hc_cashback_ledger_user,access.hc.cashback.ledger.user,model_hc_cashback_ledger,hc_cashback.group_cashback_user,1,0,0,0
-access_hc_cashback_ledger_manager,access.hc.cashback.ledger.manager,model_hc_cashback_ledger,hc_cashback.group_cashback_manager,1,1,1,0
+access_hc_cashback_ledger_manager,access.hc.cashback.ledger.manager,model_hc_cashback_ledger,hc_cashback.group_cashback_manager,1,1,1,1
 
 access_hc_cashback_withdrawal_user,access.hc.cashback.withdrawal.user,model_hc_cashback_withdrawal,hc_cashback.group_cashback_user,1,1,1,0
 access_hc_cashback_withdrawal_manager,access.hc.cashback.withdrawal.manager,model_hc_cashback_withdrawal,hc_cashback.group_cashback_manager,1,1,1,1
+
+access_hc_cashback_import_wizard_user,access.hc.cashback.import.wizard.user,model_hc_cashback_import_wizard,hc_cashback.group_cashback_user,1,1,1,1
