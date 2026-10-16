@@ -2,7 +2,7 @@
 {
     'name': "HC Password Mask",
     'version': '18.0.1.0.0',
-    'author': "TuanHung",
+    'author': "Hc",
     'category': 'Tools',
     'summary': "Never send the real value of password fields to the browser",
     'description': """
