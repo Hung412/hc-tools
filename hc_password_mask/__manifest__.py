@@ -19,6 +19,9 @@
         - Fields are detected automatically from the views, no configuration needed
     """,
     'depends': ['web'],
+    'images': [
+        'static/description/banner.png',
+    ],
     'license': 'OPL-1',
     'installable': True,
 }

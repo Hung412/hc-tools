@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <style>
+        body { font-family: 'Roboto', sans-serif; color: #333; }
+        .oe_container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+        .oe_dark { background-color: #f9f9f9; }
+        h2.oe_slogan { font-size: 28px; font-weight: 700; color: #017e84; margin-bottom: 8px; }
+        h3.oe_slogan { font-size: 20px; font-weight: 600; color: #555; margin-top: 0; }
+        .feature-grid { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 24px; }
+        .feature-card {
+            flex: 1 1 260px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px 24px;
+            background: #fff;
+        }
+        .feature-card h4 { margin: 0 0 8px; font-size: 16px; color: #017e84; }
+        .feature-card p { margin: 0; font-size: 14px; line-height: 1.6; color: #555; }
+        .badge {
+            display: inline-block;
+            background: #017e84;
+            color: #fff;
+            border-radius: 4px;
+            padding: 2px 10px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 6px;
+        }
+        .code-block {
+            background: #272822;
+            color: #f8f8f2;
+            border-radius: 6px;
+            padding: 16px 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.7;
+            overflow-x: auto;
+        }
+        .code-block .attr  { color: #a6e22e; }
+        .code-block .val   { color: #e6db74; }
+        .code-block .tag   { color: #66d9ef; }
+        .code-block .note  { color: #75715e; }
+        .compare-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 14px; }
+        .compare-table th { background: #017e84; color: #fff; padding: 10px 14px; text-align: left; }
+        .compare-table td { padding: 10px 14px; border-bottom: 1px solid #e0e0e0; vertical-align: top; }
+        .compare-table tr:nth-child(even) td { background: #f5f5f5; }
+        .tick { color: #00a854; font-weight: 700; }
+        .cross { color: #d9534f; font-weight: 700; }
+        .section-title { border-left: 4px solid #017e84; padding-left: 12px; margin: 32px 0 16px; }
+        .steps { padding-left: 20px; font-size: 14px; line-height: 1.8; }
+        .note-box {
+            border: 1px solid #f0d9a8;
+            background: #fffaf0;
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        .note-box ul { margin: 8px 0 0; padding-left: 20px; }
+    </style>
+</head>
+<body>
+
+<!-- ── Hero ── -->
+<section class="oe_container" style="text-align:center; padding: 48px 16px;">
+    <h2 class="oe_slogan">Password Mask</h2>
+    <h3 class="oe_slogan">Passwords, API keys and tokens shown with <code>password="True"</code> never reach the browser — not even in DevTools</h3>
+    <p style="margin-top:16px;">
+        <span class="badge">Odoo 18</span>
+        <span class="badge">Server-side</span>
+        <span class="badge">Zero Config</span>
+        <span class="badge">Any Model</span>
+    </p>
+</section>
+
+<!-- ── Problem ── -->
+<section class="oe_container oe_dark" style="padding: 40px 16px;">
+    <h3 class="section-title">The problem with <code>password="True"</code></h3>
+    <p>
+        In standard Odoo, <code>password="True"</code> only changes how the input is <em>drawn</em>.
+        The real secret is still sent to the browser, so anybody sitting in front of an open form can:
+    </p>
+    <ol class="steps">
+        <li>press <strong>F12</strong>, change the input to <code>type="text"</code> and read the API key in clear text, or</li>
+        <li>open the <strong>Network</strong> tab and read it in the JSON response of <code>web_read</code>.</li>
+    </ol>
+    <table class="compare-table">
+        <thead>
+            <tr>
+                <th>What the browser receives</th>
+                <th>Standard Odoo</th>
+                <th>With Password Mask</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Input value after switching to <code>type="text"</code></td>
+                <td class="cross">sk-live-9f2c…</td>
+                <td class="tick">********</td>
+            </tr>
+            <tr>
+                <td>JSON response in the Network tab</td>
+                <td class="cross">"api_key": "sk-live-9f2c…"</td>
+                <td class="tick">"api_key": "********"</td>
+            </tr>
+            <tr>
+                <td>Exported spreadsheet</td>
+                <td class="cross">real value</td>
+                <td class="tick">********</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- ── How it works ── -->
+<section class="oe_container" style="padding: 40px 16px;">
+    <h3 class="section-title">How it works</h3>
+    <p>
+        Masking happens <strong>on the server</strong>, before any data leaves Odoo.
+        A placeholder (<code>********</code>) is sent instead of the real value, and when the
+        form is saved with the placeholder untouched, the stored value is kept as it is.
+    </p>
+    <div class="code-block">
+<span class="note">&lt;!-- your existing view, nothing to change --&gt;</span><br/>
+<span class="tag">&lt;field</span> <span class="attr">name</span>=<span class="val">"api_key"</span> <span class="attr">password</span>=<span class="val">"True"</span><span class="tag">/&gt;</span><br/>
+<br/>
+<span class="note">&lt;!-- what the browser gets after installing the module --&gt;</span><br/>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"password"</span> <span class="attr">value</span>=<span class="val">"********"</span><span class="tag">&gt;</span>
+    </div>
+    <ol class="steps" style="margin-top:16px;">
+        <li>Leave the field untouched and save — the real value stays in the database.</li>
+        <li>Type a new value and save — the new value is stored normally.</li>
+        <li>Clear the field and save — the value is removed.</li>
+    </ol>
+</section>
+
+<!-- ── Features ── -->
+<section class="oe_container oe_dark" style="padding: 40px 16px;">
+    <h3 class="section-title">Features</h3>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h4>Automatic detection</h4>
+            <p>Every char/text field displayed with <code>password="True"</code> in a form, list or kanban view is protected — including inherited views and one2many sub-lists.</p>
+        </div>
+        <div class="feature-card">
+            <h4>Covers every UI channel</h4>
+            <p>Form &amp; list loading, onchange results, saving, and direct <code>read</code> / <code>search_read</code> calls made from the browser console.</p>
+        </div>
+        <div class="feature-card">
+            <h4>Safe saving</h4>
+            <p>The placeholder is never written back. Settings pages (<code>res.config.settings</code>) keep their stored keys when you click Save.</p>
+        </div>
+        <div class="feature-card">
+            <h4>Your code keeps working</h4>
+            <p>Python code, crons and integrations still read the real value — only data sent to the web client is masked.</p>
+        </div>
+        <div class="feature-card">
+            <h4>Export &amp; import guard</h4>
+            <p>Password columns are masked in exports, and importing a file that still contains the placeholder is refused so secrets are never overwritten.</p>
+        </div>
+        <div class="feature-card">
+            <h4>Hides the length too</h4>
+            <p>The placeholder always has the same length, so the number of dots no longer reveals how long the secret is.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ── Usage ── -->
+<section class="oe_container" style="padding: 40px 16px;">
+    <h3 class="section-title">Installation</h3>
+    <p>
+        Install the module — that's it. There is no configuration and no view to change:
+        fields are discovered from your views and the list refreshes automatically when
+        views are added or modified.
+    </p>
+</section>
+
+<!-- ── Notes ── -->
+<section class="oe_container oe_dark" style="padding: 40px 16px;">
+    <h3 class="section-title">Good to know</h3>
+    <div class="note-box">
+        This module protects the <strong>web interface</strong>. It complements, but does not replace, Odoo access rights:
+        <ul>
+            <li>Users who may not see a secret at all should still be restricted with <code>groups="..."</code> on the field.</li>
+            <li>External XML-RPC / JSON-RPC integrations receive the real value, as they need it.</li>
+            <li>If a field is tracked in the chatter (<code>tracking=True</code>), the chatter history is not masked.</li>
+            <li>A secret whose real value is exactly <code>********</code> cannot be saved.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ── Compatibility ── -->
+<section class="oe_container" style="padding: 40px 16px;">
+    <h3 class="section-title">Compatibility</h3>
+    <table class="compare-table" style="max-width:400px;">
+        <thead>
+            <tr><th>Odoo version</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>18.0 Community &amp; Enterprise</td><td class="tick">✓ Supported</td></tr>
+            <tr><td>17.0 and below</td><td class="cross">✗ Not tested</td></tr>
+        </tbody>
+    </table>
+</section>
+
+</body>
+</html>
