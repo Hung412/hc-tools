@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "HC Password Mask",
+    'name': "Password Mask",
     'version': '18.0.1.0.0',
     'author': "Hc",
     'category': 'Tools',
