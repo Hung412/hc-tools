@@ -1,228 +1,226 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <style>
-        body { font-family: 'Roboto', sans-serif; color: #333; }
-        .oe_container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
-        .oe_dark { background-color: #f9f9f9; }
-        h2.oe_slogan { font-size: 28px; font-weight: 700; color: #017e84; margin-bottom: 8px; }
-        h3.oe_slogan { font-size: 20px; font-weight: 600; color: #555; margin-top: 0; }
-        .feature-grid { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 24px; }
-        .feature-card {
-            flex: 1 1 260px;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 20px 24px;
-            background: #fff;
-        }
-        .feature-card h4 { margin: 0 0 8px; font-size: 16px; color: #017e84; }
-        .feature-card p { margin: 0; font-size: 14px; line-height: 1.6; color: #555; }
-        .badge {
-            display: inline-block;
-            background: #017e84;
-            color: #fff;
-            border-radius: 4px;
-            padding: 2px 10px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-right: 6px;
-        }
-        .code-block {
-            background: #272822;
-            color: #f8f8f2;
-            border-radius: 6px;
-            padding: 16px 20px;
-            font-family: 'Courier New', monospace;
-            font-size: 13px;
-            line-height: 1.7;
-            overflow-x: auto;
-            white-space: pre;
-        }
-        .code-block .kw    { color: #f92672; }
-        .code-block .attr  { color: #a6e22e; }
-        .code-block .val   { color: #e6db74; }
-        .code-block .tag   { color: #66d9ef; }
-        .code-block .note  { color: #75715e; }
-        .compare-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 14px; }
-        .compare-table th { background: #017e84; color: #fff; padding: 10px 14px; text-align: left; }
-        .compare-table td { padding: 10px 14px; border-bottom: 1px solid #e0e0e0; vertical-align: top; }
-        .compare-table tr:nth-child(even) td { background: #f5f5f5; }
-        .tick { color: #00a854; font-weight: 700; }
-        .cross { color: #d9534f; font-weight: 700; }
-        .section-title { border-left: 4px solid #017e84; padding-left: 12px; margin: 32px 0 16px; }
-        .steps { padding-left: 20px; font-size: 14px; line-height: 1.8; }
-        .note-box {
-            border: 1px solid #f0d9a8;
-            background: #fffaf0;
-            border-radius: 8px;
-            padding: 16px 20px;
-            font-size: 14px;
-            line-height: 1.7;
-        }
-        .note-box ul { margin: 8px 0 0; padding-left: 20px; }
-    </style>
-</head>
-<body>
+<div style="font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color:#2b2b3a">
 
-<!-- ── Hero ── -->
-<section class="oe_container" style="text-align:center; padding: 48px 16px;">
-    <h2 class="oe_slogan">Record History</h2>
-    <h3 class="oe_slogan">Keep a full snapshot of every change in a real history table — one typed column per tracked field, for any model</h3>
-    <p style="margin-top:16px;">
-        <span class="badge">Odoo 18</span>
-        <span class="badge">Any Model</span>
-        <span class="badge">Typed Columns</span>
-        <span class="badge">Record Rules</span>
-    </p>
-</section>
+<!-- ================= hero ================= -->
+<div style="color:#1E0B57; padding:60px 32px 56px 32px; text-align:center">
+    <span style="display:inline-block; color:#5B34D6; border:1px solid #B9A6F5; border-radius:40px; padding:7px 18px; margin:0 0 20px 0; font-size:12px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase">Odoo 18 &middot; Any model</span>
+    <h1 style="color:#1E0B57; font-size:42px; font-weight:800; margin:0 0 16px 0; line-height:1.16; letter-spacing:-.5px">
+        Record History</h1>
+    <p style="color:#4C4C60; font-size:19px; line-height:1.6; margin:0 auto; max-width:860px">
+        Keep every version of a record in a real history table: one row per change, one typed column per tracked
+        field. Filter it, group it, pivot it and export it like any other Odoo model.</p>
+    <div style="margin:28px 0 0 0">
+        <span style="display:inline-block; color:#1E0B57; border:1px solid #E7E3F5; border-radius:20px; padding:7px 14px; margin:4px; font-size:13px; font-weight:600">Typed history columns</span>
+        <span style="display:inline-block; color:#1E0B57; border:1px solid #E7E3F5; border-radius:20px; padding:7px 14px; margin:4px; font-size:13px; font-weight:600">Works on any model</span>
+        <span style="display:inline-block; color:#1E0B57; border:1px solid #E7E3F5; border-radius:20px; padding:7px 14px; margin:4px; font-size:13px; font-weight:600">Follows record rules</span>
+        <span style="display:inline-block; color:#1E0B57; border:1px solid #E7E3F5; border-radius:20px; padding:7px 14px; margin:4px; font-size:13px; font-weight:600">Community &amp; Enterprise</span>
+    </div>
+</div>
 
-<!-- ── Problem ── -->
-<section class="oe_container oe_dark" style="padding: 40px 16px;">
-    <h3 class="section-title">Why another history module?</h3>
-    <p>
-        Odoo's chatter tracking (<code>tracking=True</code>) and generic audit logs store <em>one line per changed field</em>,
-        as text. That is fine to read on a single record, but hard to answer questions such as
-        <em>"what was the total of every confirmed order last month, before it was edited?"</em>
-        Record History stores <strong>one row per version of the record</strong>, with real columns.
-    </p>
-    <table class="compare-table">
-        <thead>
-            <tr>
-                <th></th>
-                <th>Chatter tracking</th>
-                <th>Record History</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Storage</td>
-                <td>Old / new value per field, in messages</td>
-                <td class="tick">Full snapshot per version, typed columns</td>
-            </tr>
-            <tr>
-                <td>Filter, group by, pivot, export</td>
-                <td class="cross">✗</td>
-                <td class="tick">✓ like any other model</td>
-            </tr>
-            <tr>
-                <td>Requires <code>mail.thread</code></td>
-                <td class="cross">Yes</td>
-                <td class="tick">No — works on any model</td>
-            </tr>
-            <tr>
-                <td>Kept after the record is deleted</td>
-                <td class="cross">No</td>
-                <td class="tick">Yes (optional)</td>
-            </tr>
-        </tbody>
-    </table>
-</section>
+<!-- ================= the history table ================= -->
+<div style="padding:46px 32px; border-top:1px solid #E7E3F5">
+    <span style="display:inline-block; font-size:12px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase; color:#5B34D6; border-radius:20px; padding:6px 0; margin-bottom:10px">The history table</span>
+    <h2 style="font-size:31px; font-weight:800; color:#1E0B57; margin:0 0 10px 0; letter-spacing:-.3px">Every version of the record, as a row</h2>
+    <p style="font-size:17px; color:#4C4C60; line-height:1.65; margin:0 0 24px 0; max-width:1000px">
+        Each time a tracked value changes, the whole set of tracked fields is saved with who changed it, when, and
+        which fields moved. Open it from the <b style="color:#1E0B57">History</b> smart button on the record.</p>
 
-<!-- ── How it works ── -->
-<section class="oe_container" style="padding: 40px 16px;">
-    <h3 class="section-title">How it works</h3>
-    <p>
-        Add <code>history.mixin</code> to the model to track, and create a small history model with
-        <code>history.line.mixin</code>. <strong>The fields you declare on the history model are the fields that get
-        tracked</strong> — no configuration screen, no field list to maintain.
-    </p>
-    <div class="code-block"><span class="kw">from</span> odoo.addons.record_history.models <span class="kw">import</span> source_selection
+    <div style="border:1px solid #E7E3F5; border-radius:14px; padding:6px 8px; overflow-x:auto">
+        <table style="width:100%; border-collapse:collapse; font-size:14px; color:#2b2b3a; min-width:640px">
+            <thead>
+                <tr>
+                    <th style="text-align:left; padding:12px 14px; color:#8A8FA3; font-weight:600; border-bottom:2px solid #E7E3F5">Date</th>
+                    <th style="text-align:left; padding:12px 14px; color:#8A8FA3; font-weight:600; border-bottom:2px solid #E7E3F5">User</th>
+                    <th style="text-align:left; padding:12px 14px; color:#8A8FA3; font-weight:600; border-bottom:2px solid #E7E3F5">Operation</th>
+                    <th style="text-align:left; padding:12px 14px; color:#8A8FA3; font-weight:600; border-bottom:2px solid #E7E3F5">State</th>
+                    <th style="text-align:left; padding:12px 14px; color:#8A8FA3; font-weight:600; border-bottom:2px solid #E7E3F5">Customer</th>
+                    <th style="text-align:right; padding:12px 14px; color:#8A8FA3; font-weight:600; border-bottom:2px solid #E7E3F5">Total</th>
+                    <th style="text-align:left; padding:12px 14px; color:#8A8FA3; font-weight:600; border-bottom:2px solid #E7E3F5">Changed fields</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8; color:#8A8FA3">03/14 16:42</td>
+                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8">Laura</td>
+                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8"><span style="background:#E8ECFD; color:#4458D8; border-radius:12px; padding:3px 10px; font-size:12px">Updated</span></td>
+                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8"><span style="background:#EFE9FD; color:#5B34D6; border-radius:6px; padding:3px 8px; font-weight:700">Sales Order</span></td>
+                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8">Deco Addict</td>
+                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8; text-align:right">1,250.00</td>
+                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8"><span style="border:1px solid #E7E3F5; border-radius:12px; padding:2px 9px; font-size:12px">State</span></td>
+                </tr>
+                <tr>
+                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8; color:#8A8FA3">03/14 11:05</td>
+                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8">Marc</td>
+                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8"><span style="background:#E8ECFD; color:#4458D8; border-radius:12px; padding:3px 10px; font-size:12px">Updated</span></td>
+                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8">Quotation</td>
+                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8"><span style="background:#EFE9FD; color:#5B34D6; border-radius:6px; padding:3px 8px; font-weight:700">Deco Addict</span></td>
+                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8; text-align:right"><span style="background:#EFE9FD; color:#5B34D6; border-radius:6px; padding:3px 8px; font-weight:700">1,250.00</span></td>
+                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8"><span style="border:1px solid #E7E3F5; border-radius:12px; padding:2px 9px; font-size:12px">Customer</span> <span style="border:1px solid #E7E3F5; border-radius:12px; padding:2px 9px; font-size:12px">Total</span></td>
+                </tr>
+                <tr>
+                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8; color:#8A8FA3">03/14 09:30</td>
+                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8">Anna</td>
+                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8"><span style="background:#E8ECFD; color:#4458D8; border-radius:12px; padding:3px 10px; font-size:12px">Updated</span></td>
+                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8">Quotation</td>
+                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8">Azure Interior</td>
+                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8; text-align:right"><span style="background:#EFE9FD; color:#5B34D6; border-radius:6px; padding:3px 8px; font-weight:700">980.00</span></td>
+                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8"><span style="border:1px solid #E7E3F5; border-radius:12px; padding:2px 9px; font-size:12px">Total</span></td>
+                </tr>
+                <tr>
+                    <td style="padding:12px 14px; color:#8A8FA3">03/14 09:12</td>
+                    <td style="padding:12px 14px">Anna</td>
+                    <td style="padding:12px 14px"><span style="background:#E3F5EA; color:#1D8A4E; border-radius:12px; padding:3px 10px; font-size:12px">Created</span></td>
+                    <td style="padding:12px 14px">Quotation</td>
+                    <td style="padding:12px 14px">Azure Interior</td>
+                    <td style="padding:12px 14px; text-align:right">0.00</td>
+                    <td style="padding:12px 14px; color:#8A8FA3">all tracked fields</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div style="margin:24px 0 0 0; padding:0 0 0 4px">
+        <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0 0 9px 0"><span style="color:#10B981; font-weight:800">✓</span> &nbsp;Group the history by user or by date, and see who changes what the most.</div>
+        <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0 0 9px 0"><span style="color:#10B981; font-weight:800">✓</span> &nbsp;Filter on a field that changed: "every version where the customer was changed".</div>
+        <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0 0 9px 0"><span style="color:#10B981; font-weight:800">✓</span> &nbsp;Export the values a record had at any point in time, with their real types.</div>
+    </div>
+</div>
+
+<!-- ================= why ================= -->
+<div style="padding:50px 32px; border-top:1px solid #E7E3F5">
+    <span style="display:inline-block; font-size:12px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase; color:#5B34D6; padding:6px 0; margin-bottom:10px">Why Record History</span>
+    <h2 style="font-size:31px; font-weight:800; color:#1E0B57; margin:0 0 10px 0; letter-spacing:-.3px">One row per version, not one line per field</h2>
+    <p style="font-size:17px; color:#4C4C60; line-height:1.65; margin:0 0 24px 0; max-width:1000px">
+        Chatter tracking is made to be read on one record. Record History is made to be queried across all of them.</p>
+
+    <div style="font-size:0">
+        <div style="display:inline-block; vertical-align:top; width:49%; min-height:112px; margin:0 2% 14px 0; box-sizing:border-box; border:1px solid #E7E3F5; border-radius:14px; padding:20px 22px">
+            <h4 style="margin:0 0 12px 0; font-size:16px; font-weight:700; color:#1E0B57">Chatter tracking</h4>
+            <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0 0 8px 0"><span style="color:#D9534F; font-weight:800">✗</span> &nbsp;Old and new value of each field, as text in messages</div>
+            <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0 0 8px 0"><span style="color:#D9534F; font-weight:800">✗</span> &nbsp;Cannot be grouped, pivoted or exported as data</div>
+            <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0 0 8px 0"><span style="color:#D9534F; font-weight:800">✗</span> &nbsp;Only on models that inherit <code style="color:#1E0B57; font-size:13px">mail.thread</code></div>
+            <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0"><span style="color:#D9534F; font-weight:800">✗</span> &nbsp;Gone when the record is deleted</div>
+        </div><div style="display:inline-block; vertical-align:top; width:49%; min-height:112px; margin:0 0 14px 0; box-sizing:border-box; border:1px solid #E7E3F5; border-top:3px solid #10B981; border-radius:14px; padding:20px 22px">
+            <h4 style="margin:0 0 12px 0; font-size:16px; font-weight:700; color:#1E0B57">Record History</h4>
+            <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0 0 8px 0"><span style="color:#10B981; font-weight:800">✓</span> &nbsp;A full snapshot per version, in typed columns</div>
+            <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0 0 8px 0"><span style="color:#10B981; font-weight:800">✓</span> &nbsp;List, pivot, graph and export like any model</div>
+            <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0 0 8px 0"><span style="color:#10B981; font-weight:800">✓</span> &nbsp;Any model, with or without chatter</div>
+            <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0"><span style="color:#10B981; font-weight:800">✓</span> &nbsp;Can be kept after the record is deleted</div>
+        </div>
+    </div>
+</div>
+
+<!-- ================= how it works ================= -->
+<div style="padding:50px 32px; border-top:1px solid #E7E3F5">
+    <span style="display:inline-block; font-size:12px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase; color:#5B34D6; padding:6px 0; margin-bottom:10px">For developers</span>
+    <h2 style="font-size:31px; font-weight:800; color:#1E0B57; margin:0 0 10px 0; letter-spacing:-.3px">Declare a field, it is tracked</h2>
+    <p style="font-size:17px; color:#4C4C60; line-height:1.65; margin:0 0 22px 0; max-width:1000px">
+        Add <code style="color:#1E0B57; font-size:14px">history.mixin</code> to the model to follow and write a small
+        history model with <code style="color:#1E0B57; font-size:14px">history.line.mixin</code>.
+        Every field it declares with the same name and type as on the source model is tracked: no settings screen,
+        no field list to keep in sync.</p>
+
+<pre style="background:#1E1B2E; color:#E8E6F3; border-radius:14px; padding:22px 24px; margin:0 0 24px 0; font-size:13.5px; line-height:1.7; overflow-x:auto; white-space:pre; font-family:'SFMono-Regular',Consolas,'Liberation Mono',monospace"><span style="color:#C792EA">from</span> odoo.addons.record_history.models <span style="color:#C792EA">import</span> source_selection
 
 
-<span class="kw">class</span> <span class="attr">SaleOrder</span>(models.Model):
-    _inherit = [<span class="val">'sale.order'</span>, <span class="val">'history.mixin'</span>]
-    _history_model = <span class="val">'sale.order.history'</span>
+<span style="color:#C792EA">class</span> <span style="color:#82AAFF">SaleOrder</span>(models.Model):
+    _inherit = [<span style="color:#C3E88D">'sale.order'</span>, <span style="color:#C3E88D">'history.mixin'</span>]
+    _history_model = <span style="color:#C3E88D">'sale.order.history'</span>
 
 
-<span class="kw">class</span> <span class="attr">SaleOrderHistory</span>(models.Model):
-    _name = <span class="val">'sale.order.history'</span>
-    _inherit = <span class="val">'history.line.mixin'</span>
-    _description = <span class="val">'Sale Order History'</span>
+<span style="color:#C792EA">class</span> <span style="color:#82AAFF">SaleOrderHistory</span>(models.Model):
+    _name = <span style="color:#C3E88D">'sale.order.history'</span>
+    _inherit = <span style="color:#C3E88D">'history.line.mixin'</span>
+    _description = <span style="color:#C3E88D">'Sale Order History'</span>
 
-    record_id = fields.Many2one(<span class="val">'sale.order'</span>, ondelete=<span class="val">'set null'</span>, index=<span class="kw">True</span>)
-    <span class="note"># tracked fields: same name and type as on sale.order</span>
-    state = fields.Selection(selection=source_selection(<span class="val">'sale.order'</span>, <span class="val">'state'</span>))
-    partner_id = fields.Many2one(<span class="val">'res.partner'</span>)
+    record_id = fields.Many2one(<span style="color:#C3E88D">'sale.order'</span>, ondelete=<span style="color:#C3E88D">'set null'</span>, index=<span style="color:#F78C6C">True</span>)
+    <span style="color:#7F7A99"># the tracked fields</span>
+    state = fields.Selection(selection=source_selection(<span style="color:#C3E88D">'sale.order'</span>, <span style="color:#C3E88D">'state'</span>))
+    partner_id = fields.Many2one(<span style="color:#C3E88D">'res.partner'</span>)
     amount_total = fields.Monetary()
-    currency_id = fields.Many2one(<span class="val">'res.currency'</span>)</div>
-    <ol class="steps" style="margin-top:16px;">
-        <li>On <strong>create</strong>, a first snapshot is stored.</li>
-        <li>On <strong>write</strong>, a new snapshot is stored only when a tracked value really changes, with the list of changed fields.</li>
-        <li>On <strong>unlink</strong>, a last snapshot is kept when <code>record_id</code> uses <code>ondelete='set null'</code>
-            (with <code>ondelete='cascade'</code> the history is deleted with the record).</li>
-    </ol>
-</section>
+    currency_id = fields.Many2one(<span style="color:#C3E88D">'res.currency'</span>)</pre>
 
-<!-- ── Features ── -->
-<section class="oe_container oe_dark" style="padding: 40px 16px;">
-    <h3 class="section-title">Features</h3>
-    <div class="feature-grid">
-        <div class="feature-card">
-            <h4>A real table per model</h4>
-            <p>History rows have real columns: filter, group by user or date, build pivots and graphs, export to a spreadsheet.</p>
-        </div>
-        <div class="feature-card">
-            <h4>Choose fields by declaring them</h4>
-            <p>Char, number, date, selection, many2one, many2many… Any field declared on the history model with the same name and type as the source field is tracked.</p>
-        </div>
-        <div class="feature-card">
-            <h4>"History" smart button</h4>
-            <p>A smart button with the number of versions is added to the form views of tracked models automatically — no view to inherit.</p>
-        </div>
-        <div class="feature-card">
-            <h4>Views generated for you</h4>
-            <p>The history list and search views are built from the tracked fields, with the operation, the user, the date and the changed fields.</p>
-        </div>
-        <div class="feature-card">
-            <h4>Follows your access rules</h4>
-            <p>History lines inherit the record rules of their source record: users only see the history of records they are allowed to read.</p>
-        </div>
-        <div class="feature-card">
-            <h4>Light on the database</h4>
-            <p>Old and new values are read in batch, unchanged writes create nothing, and <code>history_disable=True</code> in the context skips tracking for imports and bulk updates.</p>
+    <div style="font-size:0">
+        <div style="display:inline-block; vertical-align:top; width:32%; min-height:112px; margin:0 2% 14px 0; box-sizing:border-box; border:1px solid #E7E3F5; border-top:3px solid #10B981; border-radius:14px; padding:20px 22px">
+            <h4 style="margin:0 0 8px 0; font-size:16px; font-weight:700; color:#1E0B57">On create</h4>
+            <span style="font-size:14px; color:#5c5c6b; line-height:1.55; display:block">A first snapshot with every tracked field.</span>
+        </div><div style="display:inline-block; vertical-align:top; width:32%; min-height:112px; margin:0 2% 14px 0; box-sizing:border-box; border:1px solid #E7E3F5; border-top:3px solid #5B34D6; border-radius:14px; padding:20px 22px">
+            <h4 style="margin:0 0 8px 0; font-size:16px; font-weight:700; color:#1E0B57">On write</h4>
+            <span style="font-size:14px; color:#5c5c6b; line-height:1.55; display:block">A new snapshot only when a tracked value really changes, with the changed fields.</span>
+        </div><div style="display:inline-block; vertical-align:top; width:32%; min-height:112px; margin:0 0 14px 0; box-sizing:border-box; border:1px solid #E7E3F5; border-top:3px solid #D9534F; border-radius:14px; padding:20px 22px">
+            <h4 style="margin:0 0 8px 0; font-size:16px; font-weight:700; color:#1E0B57">On delete</h4>
+            <span style="font-size:14px; color:#5c5c6b; line-height:1.55; display:block">A last snapshot, kept when <code style="color:#1E0B57; font-size:12px">record_id</code> uses <code style="color:#1E0B57; font-size:12px">ondelete='set null'</code>.</span>
         </div>
     </div>
-</section>
+</div>
 
-<!-- ── Usage ── -->
-<section class="oe_container" style="padding: 40px 16px;">
-    <h3 class="section-title">Setup</h3>
-    <ol class="steps">
-        <li>Add <code>record_history</code> to the <code>depends</code> of your module.</li>
-        <li>Inherit <code>history.mixin</code> on the model to track and set <code>_history_model</code>.</li>
-        <li>Create the history model with <code>history.line.mixin</code>, a <code>record_id</code> field and the fields to track.</li>
-        <li>Add access rights for the history model — read-only for users is enough, history lines are written by the module itself.</li>
-    </ol>
-</section>
+<!-- ================= what you get ================= -->
+<div style="padding:50px 32px; border-top:1px solid #E7E3F5">
+    <span style="display:inline-block; font-size:12px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase; color:#5B34D6; padding:6px 0; margin-bottom:10px">What you get</span>
+    <h2 style="font-size:31px; font-weight:800; color:#1E0B57; margin:0 0 22px 0; letter-spacing:-.3px">Everything around the history, done for you</h2>
 
-<!-- ── Notes ── -->
-<section class="oe_container oe_dark" style="padding: 40px 16px;">
-    <h3 class="section-title">Good to know</h3>
-    <div class="note-box">
-        Record History tracks what goes through the ORM <code>create</code> / <code>write</code> / <code>unlink</code> of the tracked model:
-        <ul>
-            <li>Stored computed fields are compared when a write touches one of their direct dependencies. Changes coming from other records (e.g. editing an order line) do not create a snapshot on the parent.</li>
-            <li>One2many fields are not tracked — track the line model itself if you need its history.</li>
-            <li>Changes made with raw SQL bypass the ORM and are not recorded.</li>
-            <li>Use <code>ondelete='cascade'</code> or <code>'set null'</code> on <code>record_id</code>; <code>'restrict'</code> would prevent deleting records that have history.</li>
-        </ul>
+    <div style="font-size:0">
+        <div style="display:inline-block; vertical-align:top; width:49%; min-height:112px; margin:0 2% 14px 0; box-sizing:border-box; border:1px solid #E7E3F5; border-radius:14px; padding:20px 22px">
+            <h4 style="margin:0 0 7px 0; font-size:16px; font-weight:700; color:#1E0B57">History smart button</h4>
+            <span style="font-size:14px; color:#5c5c6b; line-height:1.55; display:block">Added to the form views of every tracked model, with the number of versions. No view to inherit.</span>
+        </div><div style="display:inline-block; vertical-align:top; width:49%; min-height:112px; margin:0 0 14px 0; box-sizing:border-box; border:1px solid #E7E3F5; border-radius:14px; padding:20px 22px">
+            <h4 style="margin:0 0 7px 0; font-size:16px; font-weight:700; color:#1E0B57">List and search views generated</h4>
+            <span style="font-size:14px; color:#5c5c6b; line-height:1.55; display:block">Built from the tracked fields, with date, user, operation, changed fields, filters and group-bys.</span>
+        </div><div style="display:inline-block; vertical-align:top; width:49%; min-height:112px; margin:0 2% 14px 0; box-sizing:border-box; border:1px solid #E7E3F5; border-radius:14px; padding:20px 22px">
+            <h4 style="margin:0 0 7px 0; font-size:16px; font-weight:700; color:#1E0B57">Follows your record rules</h4>
+            <span style="font-size:14px; color:#5c5c6b; line-height:1.55; display:block">History lines inherit the rules of their source record: a user only sees the history of records they can read.</span>
+        </div><div style="display:inline-block; vertical-align:top; width:49%; min-height:112px; margin:0 0 14px 0; box-sizing:border-box; border:1px solid #E7E3F5; border-radius:14px; padding:20px 22px">
+            <h4 style="margin:0 0 7px 0; font-size:16px; font-weight:700; color:#1E0B57">All the usual field types</h4>
+            <span style="font-size:14px; color:#5c5c6b; line-height:1.55; display:block">Char, text, numbers, monetary, dates, selection, many2one and many2many, including stored computed fields.</span>
+        </div><div style="display:inline-block; vertical-align:top; width:49%; min-height:112px; margin:0 2% 14px 0; box-sizing:border-box; border:1px solid #E7E3F5; border-radius:14px; padding:20px 22px">
+            <h4 style="margin:0 0 7px 0; font-size:16px; font-weight:700; color:#1E0B57">Light on the database</h4>
+            <span style="font-size:14px; color:#5c5c6b; line-height:1.55; display:block">Values are read in batch for the whole recordset, and a write that changes nothing tracked creates nothing.</span>
+        </div><div style="display:inline-block; vertical-align:top; width:49%; min-height:112px; margin:0 0 14px 0; box-sizing:border-box; border:1px solid #E7E3F5; border-radius:14px; padding:20px 22px">
+            <h4 style="margin:0 0 7px 0; font-size:16px; font-weight:700; color:#1E0B57">Switch it off when needed</h4>
+            <span style="font-size:14px; color:#5c5c6b; line-height:1.55; display:block">Pass <code style="color:#1E0B57; font-size:12px">history_disable=True</code> in the context for imports and bulk updates.</span>
+        </div>
     </div>
-</section>
+</div>
 
-<!-- ── Compatibility ── -->
-<section class="oe_container" style="padding: 40px 16px;">
-    <h3 class="section-title">Compatibility</h3>
-    <table class="compare-table" style="max-width:400px;">
-        <thead>
-            <tr><th>Odoo version</th><th>Status</th></tr>
-        </thead>
-        <tbody>
-            <tr><td>18.0 Community &amp; Enterprise</td><td class="tick">✓ Supported</td></tr>
-            <tr><td>17.0 and below</td><td class="cross">✗ Not tested</td></tr>
-        </tbody>
-    </table>
-</section>
+<!-- ================= setup ================= -->
+<div style="padding:50px 32px; border-top:1px solid #E7E3F5">
+    <h2 style="font-size:30px; font-weight:700; color:#2C0091; margin:0 0 18px 0; text-align:center">How to use it</h2>
+    <ol style="font-size:16px; color:#4C4C60; line-height:1.65; margin:0 auto 14px auto; max-width:900px; padding-left:22px">
+        <li style="margin-bottom:10px">Put <code style="color:#1E0B57; font-size:13px">record_history</code> in your <code style="color:#1E0B57; font-size:13px">addons_path</code> and add it to the <code style="color:#1E0B57; font-size:13px">depends</code> of your module.</li>
+        <li style="margin-bottom:10px">Inherit <code style="color:#1E0B57; font-size:13px">history.mixin</code> on the model to follow and set <code style="color:#1E0B57; font-size:13px">_history_model</code>.</li>
+        <li style="margin-bottom:10px">Create the history model with <code style="color:#1E0B57; font-size:13px">history.line.mixin</code>, a <code style="color:#1E0B57; font-size:13px">record_id</code> field and the fields to track.</li>
+        <li style="margin-bottom:10px">Give it access rights: read-only for users is enough, history lines are written by the module itself.</li>
+    </ol>
+</div>
 
-</body>
-</html>
+<!-- ================= faq ================= -->
+<div style="padding:50px 32px; border-top:1px solid #E7E3F5">
+    <h2 style="font-size:30px; font-weight:700; color:#2C0091; margin:0 0 18px 0; text-align:center">Questions we get</h2>
+    <p style="font-size:16px; color:#4C4C60; line-height:1.65; margin:0 auto 14px auto; max-width:900px">
+        <b style="color:#2b2b3a">Do I need the Discuss app or the chatter?</b><br>
+        No. The module only depends on <code style="color:#1E0B57; font-size:13px">base</code> and works on any model.</p>
+    <p style="font-size:16px; color:#4C4C60; line-height:1.65; margin:0 auto 14px auto; max-width:900px">
+        <b style="color:#2b2b3a">Are changes made by other records caught?</b><br>
+        Stored computed fields are compared when a write touches one of their direct dependencies. A change coming from
+        another record, such as editing an order line, does not create a snapshot on the order: track the line model
+        itself if you need it.</p>
+    <p style="font-size:16px; color:#4C4C60; line-height:1.65; margin:0 auto 14px auto; max-width:900px">
+        <b style="color:#2b2b3a">Can I track one2many fields?</b><br>
+        No, one2many fields are not tracked. Give the line model its own history instead.</p>
+    <p style="font-size:16px; color:#4C4C60; line-height:1.65; margin:0 auto 14px auto; max-width:900px">
+        <b style="color:#2b2b3a">What happens when a record is deleted?</b><br>
+        With <code style="color:#1E0B57; font-size:13px">ondelete='set null'</code> on <code style="color:#1E0B57; font-size:13px">record_id</code> a last snapshot is kept with the record name;
+        with <code style="color:#1E0B57; font-size:13px">'cascade'</code> the history is deleted with it. Avoid <code style="color:#1E0B57; font-size:13px">'restrict'</code>: it would block the deletion.</p>
+    <p style="font-size:16px; color:#4C4C60; line-height:1.65; margin:0 auto; max-width:900px">
+        <b style="color:#2b2b3a">Are changes made in SQL recorded?</b><br>
+        No. Only what goes through the ORM <code style="color:#1E0B57; font-size:13px">create</code>, <code style="color:#1E0B57; font-size:13px">write</code> and <code style="color:#1E0B57; font-size:13px">unlink</code> is recorded.</p>
+</div>
+
+<!-- ================= compatibility ================= -->
+<div style="padding:40px 32px; border-top:1px solid #E7E3F5; text-align:center">
+    <h3 style="font-size:22px; font-weight:700; color:#1E0B57; margin:0 0 10px 0">Compatibility</h3>
+    <p style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0">
+        <span style="color:#10B981; font-weight:800">✓</span> &nbsp;Odoo 18.0, Community and Enterprise
+        &nbsp;&nbsp;&middot;&nbsp;&nbsp; Earlier versions are not tested</p>
+</div>
+
+</div>
