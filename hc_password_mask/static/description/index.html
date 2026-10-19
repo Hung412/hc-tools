@@ -24,8 +24,8 @@
         In standard Odoo, <code style="color:#1E0B57; font-size:14px">password="True"</code> only changes how the input
         is <em>drawn</em>. The real secret is still sent to the browser, so anybody sitting in front of an open form can:</p>
     <div style="margin:0 0 24px 0; padding:0 0 0 4px">
-        <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0 0 9px 0"><span style="color:#D9534F; font-weight:800">✗</span> &nbsp;press <b style="color:#1E0B57">F12</b>, change the input to <code style="color:#1E0B57; font-size:13px">type="text"</code> and read the API key in clear text, or</div>
-        <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0 0 9px 0"><span style="color:#D9534F; font-weight:800">✗</span> &nbsp;open the <b style="color:#1E0B57">Network</b> tab and read it in the JSON response of <code style="color:#1E0B57; font-size:13px">web_read</code>.</div>
+        <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0 0 9px 0"><span style="color:#D9534F; font-weight:800">&#10007;</span> &nbsp;press <b style="color:#1E0B57">F12</b>, change the input to <code style="color:#1E0B57; font-size:13px">type="text"</code> and read the API key in clear text, or</div>
+        <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0 0 9px 0"><span style="color:#D9534F; font-weight:800">&#10007;</span> &nbsp;open the <b style="color:#1E0B57">Network</b> tab and read it in the JSON response of <code style="color:#1E0B57; font-size:13px">web_read</code>.</div>
     </div>
 
     <div style="border:1px solid #E7E3F5; border-radius:14px; padding:6px 8px; overflow-x:auto">
@@ -40,12 +40,12 @@
             <tbody>
                 <tr>
                     <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8">Input value after switching to <code style="color:#1E0B57; font-size:12px">type="text"</code></td>
-                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8"><span style="background:#FCEAEA; color:#C23B37; border-radius:6px; padding:3px 8px; font-family:'SFMono-Regular',Consolas,'Liberation Mono',monospace; font-size:13px">sk-live-9f2c…</span></td>
+                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8"><span style="background:#FCEAEA; color:#C23B37; border-radius:6px; padding:3px 8px; font-family:'SFMono-Regular',Consolas,'Liberation Mono',monospace; font-size:13px">sk-live-9f2c&#8230;</span></td>
                     <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8"><span style="background:#E3F5EA; color:#1D8A4E; border-radius:6px; padding:3px 8px; font-family:'SFMono-Regular',Consolas,'Liberation Mono',monospace; font-size:13px">********</span></td>
                 </tr>
                 <tr>
                     <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8">JSON response in the Network tab</td>
-                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8"><span style="background:#FCEAEA; color:#C23B37; border-radius:6px; padding:3px 8px; font-family:'SFMono-Regular',Consolas,'Liberation Mono',monospace; font-size:13px">"api_key": "sk-live-9f2c…"</span></td>
+                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8"><span style="background:#FCEAEA; color:#C23B37; border-radius:6px; padding:3px 8px; font-family:'SFMono-Regular',Consolas,'Liberation Mono',monospace; font-size:13px">"api_key": "sk-live-9f2c&#8230;"</span></td>
                     <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8"><span style="background:#E3F5EA; color:#1D8A4E; border-radius:6px; padding:3px 8px; font-family:'SFMono-Regular',Consolas,'Liberation Mono',monospace; font-size:13px">"api_key": "********"</span></td>
                 </tr>
                 <tr>
@@ -67,11 +67,11 @@
         (<code style="color:#1E0B57; font-size:14px">********</code>) is sent instead of the real value, and when the
         form is saved with the placeholder untouched, the stored value is kept as it is.</p>
 
-<pre style="background:#1E1B2E; color:#E8E6F3; border-radius:14px; padding:22px 24px; margin:0 0 24px 0; font-size:13.5px; line-height:1.7; overflow-x:auto; white-space:pre; font-family:'SFMono-Regular',Consolas,'Liberation Mono',monospace"><span style="color:#7F7A99">&lt;!-- your existing view, nothing to change --&gt;</span>
-<span style="color:#82AAFF">&lt;field</span> <span style="color:#C792EA">name</span>=<span style="color:#C3E88D">"api_key"</span> <span style="color:#C792EA">password</span>=<span style="color:#C3E88D">"True"</span><span style="color:#82AAFF">/&gt;</span>
+<pre style="background:#F6F5FB; border:1px solid #E7E3F5; font-weight:500; color:#1E0B57; border-radius:14px; padding:22px 24px; margin:0 0 24px 0; font-size:13.5px; line-height:1.7; overflow-x:auto; white-space:pre; font-family:'SFMono-Regular',Consolas,'Liberation Mono',monospace"><span style="color:#6B7280">&lt;!-- your existing view, nothing to change --&gt;</span>
+<span style="color:#1D4ED8">&lt;field</span> <span style="color:#7C3AED">name</span>=<span style="color:#047857">"api_key"</span> <span style="color:#7C3AED">password</span>=<span style="color:#047857">"True"</span><span style="color:#1D4ED8">/&gt;</span>
 
-<span style="color:#7F7A99">&lt;!-- what the browser gets after installing the module --&gt;</span>
-<span style="color:#82AAFF">&lt;input</span> <span style="color:#C792EA">type</span>=<span style="color:#C3E88D">"password"</span> <span style="color:#C792EA">value</span>=<span style="color:#C3E88D">"********"</span><span style="color:#82AAFF">&gt;</span></pre>
+<span style="color:#6B7280">&lt;!-- what the browser gets after installing the module --&gt;</span>
+<span style="color:#1D4ED8">&lt;input</span> <span style="color:#7C3AED">type</span>=<span style="color:#047857">"password"</span> <span style="color:#7C3AED">value</span>=<span style="color:#047857">"********"</span><span style="color:#1D4ED8">&gt;</span></pre>
 
     <div style="font-size:0">
         <div style="display:inline-block; vertical-align:top; width:32%; min-height:112px; margin:0 2% 14px 0; box-sizing:border-box; border:1px solid #E7E3F5; border-top:3px solid #10B981; border-radius:14px; padding:20px 22px">
@@ -147,7 +147,7 @@
 <div style="padding:40px 32px; border-top:1px solid #E7E3F5; text-align:center">
     <h3 style="font-size:22px; font-weight:700; color:#1E0B57; margin:0 0 10px 0">Compatibility</h3>
     <p style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0">
-        <span style="color:#10B981; font-weight:800">✓</span> &nbsp;Odoo 18.0, Community and Enterprise
+        <span style="color:#10B981; font-weight:800">&#10003;</span> &nbsp;Odoo 18.0, Community and Enterprise
         &nbsp;&nbsp;&middot;&nbsp;&nbsp; 17.0 and below are not tested</p>
 </div>
 

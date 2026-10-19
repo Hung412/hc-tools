@@ -28,12 +28,12 @@
     <div style="font-size:0">
         <div style="display:inline-block; vertical-align:top; width:49%; min-height:112px; margin:0 2% 14px 0; box-sizing:border-box; border:1px solid #E7E3F5; border-radius:14px; padding:20px 22px">
             <h4 style="margin:0 0 12px 0; font-size:16px; font-weight:700; color:#1E0B57"><code style="font-size:14px">percentage</code> (built-in)</h4>
-            <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0 0 8px 0"><span style="color:#D9534F; font-weight:800">✗</span> &nbsp;Integer field, stored value <code style="color:#1E0B57; font-size:13px">50</code></div>
-            <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0"><span style="color:#D9534F; font-weight:800">✗</span> &nbsp;Displayed as <span style="background:#FCEAEA; color:#C23B37; border-radius:6px; padding:2px 8px; font-weight:700">5,000%</span></div>
+            <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0 0 8px 0"><span style="color:#D9534F; font-weight:800">&#10007;</span> &nbsp;Integer field, stored value <code style="color:#1E0B57; font-size:13px">50</code></div>
+            <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0"><span style="color:#D9534F; font-weight:800">&#10007;</span> &nbsp;Displayed as <span style="background:#FCEAEA; color:#C23B37; border-radius:6px; padding:2px 8px; font-weight:700">5,000%</span></div>
         </div><div style="display:inline-block; vertical-align:top; width:49%; min-height:112px; margin:0 0 14px 0; box-sizing:border-box; border:1px solid #E7E3F5; border-top:3px solid #10B981; border-radius:14px; padding:20px 22px">
             <h4 style="margin:0 0 12px 0; font-size:16px; font-weight:700; color:#1E0B57"><code style="font-size:14px">integer_percentage</code> (this module)</h4>
-            <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0 0 8px 0"><span style="color:#10B981; font-weight:800">✓</span> &nbsp;Integer field, stored value <code style="color:#1E0B57; font-size:13px">50</code></div>
-            <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0"><span style="color:#10B981; font-weight:800">✓</span> &nbsp;Displayed as <span style="background:#E3F5EA; color:#1D8A4E; border-radius:6px; padding:2px 8px; font-weight:700">50%</span></div>
+            <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0 0 8px 0"><span style="color:#10B981; font-weight:800">&#10003;</span> &nbsp;Integer field, stored value <code style="color:#1E0B57; font-size:13px">50</code></div>
+            <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0"><span style="color:#10B981; font-weight:800">&#10003;</span> &nbsp;Displayed as <span style="background:#E3F5EA; color:#1D8A4E; border-radius:6px; padding:2px 8px; font-weight:700">50%</span></div>
         </div>
     </div>
 </div>
@@ -46,7 +46,7 @@
     <div style="font-size:0">
         <div style="display:inline-block; vertical-align:top; width:49%; min-height:112px; margin:0 2% 14px 0; box-sizing:border-box; border:1px solid #E7E3F5; border-radius:14px; padding:20px 22px">
             <h4 style="margin:0 0 7px 0; font-size:16px; font-weight:700; color:#1E0B57">Correct display</h4>
-            <span style="font-size:14px; color:#5c5c6b; line-height:1.55; display:block">Stored value <code style="color:#1E0B57; font-size:12px">50</code> is shown as <code style="color:#1E0B57; font-size:12px">50%</code>. No hidden ×100 or ÷100 conversion.</span>
+            <span style="font-size:14px; color:#5c5c6b; line-height:1.55; display:block">Stored value <code style="color:#1E0B57; font-size:12px">50</code> is shown as <code style="color:#1E0B57; font-size:12px">50%</code>. No hidden &#215;100 or &#247;100 conversion.</span>
         </div><div style="display:inline-block; vertical-align:top; width:49%; min-height:112px; margin:0 0 14px 0; box-sizing:border-box; border:1px solid #E7E3F5; border-radius:14px; padding:20px 22px">
             <h4 style="margin:0 0 7px 0; font-size:16px; font-weight:700; color:#1E0B57">Thousand-separator aware</h4>
             <span style="font-size:14px; color:#5c5c6b; line-height:1.55; display:block">Large values like <code style="color:#1E0B57; font-size:12px">1000</code> are formatted per locale, e.g. <code style="color:#1E0B57; font-size:12px">1,000%</code>.</span>
@@ -74,13 +74,13 @@
         <code style="color:#1E0B57; font-size:13px">&lt;field&gt;</code> tag whose underlying field is an
         <code style="color:#1E0B57; font-size:13px">Integer</code>:</p>
 
-<pre style="background:#1E1B2E; color:#E8E6F3; border-radius:14px; padding:22px 24px; margin:0 auto 20px auto; max-width:900px; box-sizing:border-box; font-size:13.5px; line-height:1.7; overflow-x:auto; white-space:pre; font-family:'SFMono-Regular',Consolas,'Liberation Mono',monospace"><span style="color:#82AAFF">&lt;field</span> <span style="color:#C792EA">name</span>=<span style="color:#C3E88D">"completion_rate"</span> <span style="color:#C792EA">widget</span>=<span style="color:#C3E88D">"integer_percentage"</span><span style="color:#82AAFF">/&gt;</span>
-<span style="color:#82AAFF">&lt;field</span> <span style="color:#C792EA">name</span>=<span style="color:#C3E88D">"discount_pct"</span>    <span style="color:#C792EA">widget</span>=<span style="color:#C3E88D">"integer_percentage"</span><span style="color:#82AAFF">/&gt;</span>
-<span style="color:#82AAFF">&lt;field</span> <span style="color:#C792EA">name</span>=<span style="color:#C3E88D">"tax_rate"</span>        <span style="color:#C792EA">widget</span>=<span style="color:#C3E88D">"integer_percentage"</span> <span style="color:#C792EA">placeholder</span>=<span style="color:#C3E88D">"0"</span><span style="color:#82AAFF">/&gt;</span></pre>
+<pre style="background:#F6F5FB; border:1px solid #E7E3F5; font-weight:500; color:#1E0B57; border-radius:14px; padding:22px 24px; margin:0 auto 20px auto; max-width:900px; box-sizing:border-box; font-size:13.5px; line-height:1.7; overflow-x:auto; white-space:pre; font-family:'SFMono-Regular',Consolas,'Liberation Mono',monospace"><span style="color:#1D4ED8">&lt;field</span> <span style="color:#7C3AED">name</span>=<span style="color:#047857">"completion_rate"</span> <span style="color:#7C3AED">widget</span>=<span style="color:#047857">"integer_percentage"</span><span style="color:#1D4ED8">/&gt;</span>
+<span style="color:#1D4ED8">&lt;field</span> <span style="color:#7C3AED">name</span>=<span style="color:#047857">"discount_pct"</span>    <span style="color:#7C3AED">widget</span>=<span style="color:#047857">"integer_percentage"</span><span style="color:#1D4ED8">/&gt;</span>
+<span style="color:#1D4ED8">&lt;field</span> <span style="color:#7C3AED">name</span>=<span style="color:#047857">"tax_rate"</span>        <span style="color:#7C3AED">widget</span>=<span style="color:#047857">"integer_percentage"</span> <span style="color:#7C3AED">placeholder</span>=<span style="color:#047857">"0"</span><span style="color:#1D4ED8">/&gt;</span></pre>
 
     <div style="margin:0 auto; max-width:900px">
-        <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0 0 9px 0"><span style="color:#10B981; font-weight:800">✓</span> &nbsp;No configuration needed.</div>
-        <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0"><span style="color:#10B981; font-weight:800">✓</span> &nbsp;The widget is registered globally as <code style="color:#1E0B57; font-size:13px">integer_percentage</code> and becomes available immediately after installing the module.</div>
+        <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0 0 9px 0"><span style="color:#10B981; font-weight:800">&#10003;</span> &nbsp;No configuration needed.</div>
+        <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0"><span style="color:#10B981; font-weight:800">&#10003;</span> &nbsp;The widget is registered globally as <code style="color:#1E0B57; font-size:13px">integer_percentage</code> and becomes available immediately after installing the module.</div>
     </div>
 </div>
 
@@ -88,7 +88,7 @@
 <div style="padding:40px 32px; border-top:1px solid #E7E3F5; text-align:center">
     <h3 style="font-size:22px; font-weight:700; color:#1E0B57; margin:0 0 10px 0">Compatibility</h3>
     <p style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0">
-        <span style="color:#10B981; font-weight:800">✓</span> &nbsp;Odoo 18.0
+        <span style="color:#10B981; font-weight:800">&#10003;</span> &nbsp;Odoo 18.0
         &nbsp;&nbsp;&middot;&nbsp;&nbsp; 17.0 and below are not tested</p>
 </div>
 

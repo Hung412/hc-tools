@@ -6,7 +6,7 @@
     <h1 style="color:#1E0B57; font-size:42px; font-weight:800; margin:0 0 16px 0; line-height:1.16; letter-spacing:-.5px">
         Line Number Widget</h1>
     <p style="color:#4C4C60; font-size:19px; line-height:1.6; margin:0 auto; max-width:860px">
-        Add an automatic <b style="color:#1E0B57">1, 2, 3…</b> position column to your one2many and many2many lists,
+        Add an automatic <b style="color:#1E0B57">1, 2, 3&#8230;</b> position column to your one2many and many2many lists,
         with a single attribute.</p>
     <div style="margin:28px 0 0 0">
         <span style="display:inline-block; color:#1E0B57; border:1px solid #E7E3F5; border-radius:20px; padding:7px 14px; margin:4px; font-size:13px; font-weight:600">One attribute</span>
@@ -29,12 +29,12 @@
     <div style="font-size:0">
         <div style="display:inline-block; vertical-align:top; width:49%; min-height:112px; margin:0 2% 14px 0; box-sizing:border-box; border:1px solid #E7E3F5; border-radius:14px; padding:20px 22px">
             <h4 style="margin:0 0 12px 0; font-size:16px; font-weight:700; color:#1E0B57"><code style="font-size:14px">&lt;field name="sequence"/&gt;</code> (raw)</h4>
-            <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0 0 8px 0"><span style="color:#D9534F; font-weight:800">✗</span> &nbsp;Stored values <code style="color:#1E0B57; font-size:13px">3, 7, 41</code></div>
-            <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0"><span style="color:#D9534F; font-weight:800">✗</span> &nbsp;Displayed as <code style="color:#1E0B57; font-size:13px">3, 7, 41</code>: not readable</div>
+            <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0 0 8px 0"><span style="color:#D9534F; font-weight:800">&#10007;</span> &nbsp;Stored values <code style="color:#1E0B57; font-size:13px">3, 7, 41</code></div>
+            <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0"><span style="color:#D9534F; font-weight:800">&#10007;</span> &nbsp;Displayed as <code style="color:#1E0B57; font-size:13px">3, 7, 41</code>: not readable</div>
         </div><div style="display:inline-block; vertical-align:top; width:49%; min-height:112px; margin:0 0 14px 0; box-sizing:border-box; border:1px solid #E7E3F5; border-top:3px solid #10B981; border-radius:14px; padding:20px 22px">
             <h4 style="margin:0 0 12px 0; font-size:16px; font-weight:700; color:#1E0B57"><code style="font-size:14px">widget="x2many_line_number"</code> (this module)</h4>
-            <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0 0 8px 0"><span style="color:#10B981; font-weight:800">✓</span> &nbsp;Stored values <code style="color:#1E0B57; font-size:13px">3, 7, 41</code></div>
-            <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0"><span style="color:#10B981; font-weight:800">✓</span> &nbsp;Displayed as <code style="color:#1E0B57; font-size:13px">1, 2, 3</code>: readable</div>
+            <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0 0 8px 0"><span style="color:#10B981; font-weight:800">&#10003;</span> &nbsp;Stored values <code style="color:#1E0B57; font-size:13px">3, 7, 41</code></div>
+            <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0"><span style="color:#10B981; font-weight:800">&#10003;</span> &nbsp;Displayed as <code style="color:#1E0B57; font-size:13px">1, 2, 3</code>: readable</div>
         </div>
     </div>
 
@@ -50,19 +50,19 @@
             </thead>
             <tbody>
                 <tr>
-                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8; color:#B9B6C8">⠿</td>
+                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8; color:#B9B6C8">&#10303;</td>
                     <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8; text-align:right"><span style="background:#EFE9FD; color:#5B34D6; border-radius:6px; padding:3px 8px; font-weight:700">1</span></td>
                     <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8">VIP customers</td>
                     <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8">&gt;</td>
                 </tr>
                 <tr>
-                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8; color:#B9B6C8">⠿</td>
+                    <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8; color:#B9B6C8">&#10303;</td>
                     <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8; text-align:right"><span style="background:#EFE9FD; color:#5B34D6; border-radius:6px; padding:3px 8px; font-weight:700">2</span></td>
                     <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8">Returning customers</td>
                     <td style="padding:12px 14px; border-bottom:1px solid #F0EEF8">&lt;=</td>
                 </tr>
                 <tr>
-                    <td style="padding:12px 14px; color:#B9B6C8">⠿</td>
+                    <td style="padding:12px 14px; color:#B9B6C8">&#10303;</td>
                     <td style="padding:12px 14px; text-align:right"><span style="background:#EFE9FD; color:#5B34D6; border-radius:6px; padding:3px 8px; font-weight:700">3</span></td>
                     <td style="padding:12px 14px">New leads</td>
                     <td style="padding:12px 14px">=</td>
@@ -80,7 +80,7 @@
     <div style="font-size:0">
         <div style="display:inline-block; vertical-align:top; width:49%; min-height:112px; margin:0 2% 14px 0; box-sizing:border-box; border:1px solid #E7E3F5; border-radius:14px; padding:20px 22px">
             <h4 style="margin:0 0 7px 0; font-size:16px; font-weight:700; color:#1E0B57">True ordinal position</h4>
-            <span style="font-size:14px; color:#5c5c6b; line-height:1.55; display:block">Displays <code style="color:#1E0B57; font-size:12px">1, 2, 3…</code> based on the row's actual position in the list: the stored value is never shown.</span>
+            <span style="font-size:14px; color:#5c5c6b; line-height:1.55; display:block">Displays <code style="color:#1E0B57; font-size:12px">1, 2, 3&#8230;</code> based on the row's actual position in the list: the stored value is never shown.</span>
         </div><div style="display:inline-block; vertical-align:top; width:49%; min-height:112px; margin:0 0 14px 0; box-sizing:border-box; border:1px solid #E7E3F5; border-radius:14px; padding:20px 22px">
             <h4 style="margin:0 0 7px 0; font-size:16px; font-weight:700; color:#1E0B57">Live renumbering</h4>
             <span style="font-size:14px; color:#5c5c6b; line-height:1.55; display:block">Drag rows with the <code style="color:#1E0B57; font-size:12px">handle</code> widget and the numbers update instantly. Add or remove a line: same thing.</span>
@@ -107,17 +107,17 @@
         Set the widget on the <b style="color:#2b2b3a">x2many field itself</b> (one2many or many2many): the number
         column is inserted automatically, right after the drag handle.</p>
 
-<pre style="background:#1E1B2E; color:#E8E6F3; border-radius:14px; padding:22px 24px; margin:0 auto 20px auto; max-width:900px; box-sizing:border-box; font-size:13.5px; line-height:1.7; overflow-x:auto; white-space:pre; font-family:'SFMono-Regular',Consolas,'Liberation Mono',monospace"><span style="color:#82AAFF">&lt;field</span> <span style="color:#C792EA">name</span>=<span style="color:#C3E88D">"group_ids"</span> <span style="color:#C792EA">widget</span>=<span style="color:#C3E88D">"x2many_line_number"</span>
-       <span style="color:#C792EA">options</span>=<span style="color:#C3E88D">"{'line_number_string': 'Priority'}"</span><span style="color:#82AAFF">&gt;</span>
-    <span style="color:#82AAFF">&lt;list&gt;</span>
-        <span style="color:#82AAFF">&lt;field</span> <span style="color:#C792EA">name</span>=<span style="color:#C3E88D">"sequence"</span> <span style="color:#C792EA">widget</span>=<span style="color:#C3E88D">"handle"</span><span style="color:#82AAFF">/&gt;</span>
-        <span style="color:#82AAFF">&lt;field</span> <span style="color:#C792EA">name</span>=<span style="color:#C3E88D">"name"</span><span style="color:#82AAFF">/&gt;</span>
-    <span style="color:#82AAFF">&lt;/list&gt;</span>
-<span style="color:#82AAFF">&lt;/field&gt;</span></pre>
+<pre style="background:#F6F5FB; border:1px solid #E7E3F5; font-weight:500; color:#1E0B57; border-radius:14px; padding:22px 24px; margin:0 auto 20px auto; max-width:900px; box-sizing:border-box; font-size:13.5px; line-height:1.7; overflow-x:auto; white-space:pre; font-family:'SFMono-Regular',Consolas,'Liberation Mono',monospace"><span style="color:#1D4ED8">&lt;field</span> <span style="color:#7C3AED">name</span>=<span style="color:#047857">"group_ids"</span> <span style="color:#7C3AED">widget</span>=<span style="color:#047857">"x2many_line_number"</span>
+       <span style="color:#7C3AED">options</span>=<span style="color:#047857">"{'line_number_string': 'Priority'}"</span><span style="color:#1D4ED8">&gt;</span>
+    <span style="color:#1D4ED8">&lt;list&gt;</span>
+        <span style="color:#1D4ED8">&lt;field</span> <span style="color:#7C3AED">name</span>=<span style="color:#047857">"sequence"</span> <span style="color:#7C3AED">widget</span>=<span style="color:#047857">"handle"</span><span style="color:#1D4ED8">/&gt;</span>
+        <span style="color:#1D4ED8">&lt;field</span> <span style="color:#7C3AED">name</span>=<span style="color:#047857">"name"</span><span style="color:#1D4ED8">/&gt;</span>
+    <span style="color:#1D4ED8">&lt;/list&gt;</span>
+<span style="color:#1D4ED8">&lt;/field&gt;</span></pre>
 
     <div style="margin:0 auto; max-width:900px">
-        <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0 0 9px 0"><span style="color:#10B981; font-weight:800">✓</span> &nbsp;<code style="color:#1E0B57; font-size:13px">line_number_string</code> is optional: the column header defaults to <code style="color:#1E0B57; font-size:13px">#</code>.</div>
-        <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0"><span style="color:#10B981; font-weight:800">✓</span> &nbsp;The widget is registered globally as <code style="color:#1E0B57; font-size:13px">x2many_line_number</code> and becomes available immediately after installing the module.</div>
+        <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0 0 9px 0"><span style="color:#10B981; font-weight:800">&#10003;</span> &nbsp;<code style="color:#1E0B57; font-size:13px">line_number_string</code> is optional: the column header defaults to <code style="color:#1E0B57; font-size:13px">#</code>.</div>
+        <div style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0"><span style="color:#10B981; font-weight:800">&#10003;</span> &nbsp;The widget is registered globally as <code style="color:#1E0B57; font-size:13px">x2many_line_number</code> and becomes available immediately after installing the module.</div>
     </div>
 </div>
 
@@ -125,7 +125,7 @@
 <div style="padding:40px 32px; border-top:1px solid #E7E3F5; text-align:center">
     <h3 style="font-size:22px; font-weight:700; color:#1E0B57; margin:0 0 10px 0">Compatibility</h3>
     <p style="font-size:15px; color:#4C4C60; line-height:1.6; margin:0">
-        <span style="color:#10B981; font-weight:800">✓</span> &nbsp;Odoo 18.0
+        <span style="color:#10B981; font-weight:800">&#10003;</span> &nbsp;Odoo 18.0
         &nbsp;&nbsp;&middot;&nbsp;&nbsp; 17.0 and below are not tested</p>
 </div>
 
